@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+@import 'config';
+@import 'colors';
+@import 'buttons';
+@import 'inputs';
+@import 'modalWindow';
+@import 'tables';
+@import 'tiles';
+@import 'navbars';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $lx-config-font-family;
+  font-size: $lx-config-font-size;
+  min-height: 100Vh;
+}
+
+.container {
+  width: $lx-config-container-size;
+  max-width: $lx-config-container-size;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $name, $color in $lx-color-names {
+  .#{$name} {
+    background-color: $color;
+  }
+  .color-#{$name} {
+    color: $color;
+  }
+}
+
+$side-list: ('':'', 't':'-top', 'b':'-bottom', 'l':'-left', 'r':'-right');
+$spacers: ('m':'margin', 'p':'padding');
+@each $short, $spacer in $spacers {
+  @each $name, $suffix in $side-list {
+    @for $i from 0 through 5 {
+      #{$short}#{$name} {
+        #{$spacer}#{$suffix}: #{$i}rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.table {
+  border: 1px solid $lx-color-inactive;
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    cursor: default;
+
+    &:hover {
+      background-color: $lx-color-inactive-light;
+    }
+
+    th {
+      text-align: left;
+      background: $lx-color-inactive-light;
+      padding: .4rem;
+      border: 1px solid $lx-color-inactive;
+      color: $lx-color-dark;
+
+
+      .title-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .caption {
+          display: flex;
+          flex-wrap: nowrap;
+        }
+
+        .sort-icon {
+          width: 1.1rem;
+          min-width: 1.1rem;
+        }
+
+        .title {
+          &.sortable {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    td {
+      padding: .4rem;
+      border: 1px solid $lx-color-inactive;
+    }
+  }
+}
