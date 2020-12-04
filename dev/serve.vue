@@ -1,3 +1,34 @@
+<template>
+  <div id="app">
+    <div>
+      <h3>Inputs</h3>
+      <template v-for="val in inputValues">
+        <lx-input v-model="val.value" :label="val.label" :type="val.type" :emptyLabel="val.emptyLabel">
+          <template v-if="val.iconprepend" v-slot:prepend>
+            L
+          </template>
+          <template v-if="val.iconappend" v-slot:append>
+            $
+          </template>
+        </lx-input>
+      </template>
+
+    </div>
+
+    <lx-table :fields="fields" :items="items" @changeSort="changeSort"
+              :sort-by="sortBy" :sort-desc="sortDesc">
+      <template v-slot:name1="{ field, item }">
+        <fa-icon v-if="item.sex === 'F'" icon="venus"/>
+        <fa-icon v-else-if="item.sex === 'M'" icon="mars"/>
+        <fa-icon v-else icon="genderless"/>
+        <a :href="'#mailto:'+item.email">
+          {{ getItemValue(field, item) }}
+        </a>
+      </template>
+    </lx-table>
+  </div>
+</template>
+
 <script>
 import Vue from 'vue';
 import {lxInput, lxTable} from '@/entry';
@@ -10,6 +41,14 @@ export default Vue.extend({
   },
   data() {
     return ({
+      inputValues: [
+        {type: 'text', label: '', value: 'Text value'},
+        {type: 'text', label: 'Labeled input', value: 'Labeled'},
+        {type: 'password', label: 'Password', value: 'password'},
+        {type: 'password', value: 'password', iconprepend: 'true'},
+        {type: 'number', value: '99.90', label: 'Price', iconappend: 'true'},
+        {type: 'email', value: 'email@post.ru', emptyLabel: true},
+      ],
       sortBy: 'name1',
       sortDesc: false,
       fields: [
@@ -208,20 +247,3 @@ export default Vue.extend({
 });
 </script>
 
-<template>
-  <div id="app">
-    <lexx-ui-vue-sample/>
-    <lx-input label="Hello"/>
-    <lx-table :fields="fields" :items="items" @changeSort="changeSort"
-              :sort-by="sortBy" :sort-desc="sortDesc">
-      <template v-slot:name1="{ field, item }">
-        <fa-icon v-if="item.sex === 'F'" icon="venus"/>
-        <fa-icon v-else-if="item.sex === 'M'" icon="mars"/>
-        <fa-icon v-else icon="genderless"/>
-        <a :href="'#mailto:'+item.email">
-          {{ getItemValue(field, item) }}
-        </a>
-      </template>
-    </lx-table>
-  </div>
-</template>

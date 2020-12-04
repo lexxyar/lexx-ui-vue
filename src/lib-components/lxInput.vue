@@ -1,6 +1,8 @@
 <template>
   <div class="input-group">
-    <label :for="uid" :class="label?'has-text':''">{{ label }}</label>
+    <template v-if="emptyLabel || label">
+      <label :for="uid" :class="label?'has-text':''">{{ label }}</label>
+    </template>
     <div class="input-container">
       <div class="input-extention prepend" v-if="hasPrepend">
         <slot name="prepend"></slot>
@@ -23,7 +25,8 @@ export default {
   props: {
     value: {},
     type: {type: String, default: 'text'},
-    label: {type: String, default: ''}
+    label: {type: String, default: ''},
+    emptyLabel: {type: Boolean, default: false},
   },
   data() {
     return ({
@@ -42,5 +45,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./common.scss";
+//@import "./common.scss";
 </style>

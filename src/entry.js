@@ -1,3 +1,4 @@
+import "./lib-components/assets/common.scss"
 // Import vue components
 import * as components from '@/lib-components/index';
 
