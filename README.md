@@ -6,7 +6,9 @@ npm i lexx-ui-vue
 ```
 ```vuejs
 import Vue from "vue"
-import { lxCheckbox } from "lexx-ui-vue"
+import LexxUi from "lexx-ui-vue"
+
+Vue.use(LexxUi)
 ```
 ## Usage
 ```vue

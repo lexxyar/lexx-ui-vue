@@ -1,6 +1,6 @@
 {
   "name": "lexx-ui-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vue UI library by lexx",
   "main": "dist/lexx-ui-vue.ssr.js",
   "browser": "dist/lexx-ui-vue.esm.js",
@@ -40,6 +40,7 @@
     "rollup-plugin-vue": "^5.1.6",
     "sass-loader": "^10.1.0",
     "vue": "^2.6.11",
+    "vue-router": "^3.4.9",
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {

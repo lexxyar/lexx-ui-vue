@@ -7,6 +7,7 @@
 @import 'tables';
 @import 'tiles';
 @import 'navbars';
+@import 'gauge';
 
 * {
   margin: 0;
@@ -41,9 +42,14 @@ $spacers: ('m':'margin', 'p':'padding');
 @each $short, $spacer in $spacers {
   @each $name, $suffix in $side-list {
     @for $i from 0 through 5 {
-      #{$short}#{$name} {
+      #{$short}#{$name}-#{$i} {
         #{$spacer}#{$suffix}: #{$i}rem;
       }
     }
   }
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
 }

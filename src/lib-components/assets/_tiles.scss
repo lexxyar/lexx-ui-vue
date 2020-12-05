@@ -17,6 +17,11 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
   cursor: pointer;
   transition: background-color .3s;
 
+  &.type-create{
+    border: 2px dashed $lx-color-inactive;
+    color: $lx-color-inactive;
+  }
+
   &:hover {
     background-color: rgba(3, 169, 244, .05);
   }
@@ -68,6 +73,15 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
 
       }
 
+    }
+
+    &.type-create {
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 2rem;
+      }
     }
   }
 
