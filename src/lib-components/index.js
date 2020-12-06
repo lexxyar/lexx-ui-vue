@@ -10,3 +10,4 @@ export {default as lxSwitch} from './lxSwitch.vue';
 export {default as lxTable} from './lxTable.vue';
 export {default as lxTile} from './lxTile.vue';
 export {default as lxGauge} from './lxGauge.vue';
+export {default as lxCard} from './lxCard.vue';

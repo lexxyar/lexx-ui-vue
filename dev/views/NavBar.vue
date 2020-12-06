@@ -21,9 +21,9 @@
           <lx-navbar-item>Profile</lx-navbar-item>
           <lx-navbar-item>Messages</lx-navbar-item>
           <lx-navbar-item>Config</lx-navbar-item>
-          <lx-navbar-item>Sign Out</lx-navbar-item>
+          <lx-navbar-item @click="onClick">Sign Out</lx-navbar-item>
         </lx-navbar-dd-item>
-        <lx-navbar-item>Last</lx-navbar-item>
+        <lx-navbar-item @click="onClick">Last</lx-navbar-item>
       </template>
     </lx-navbar>
   </div>

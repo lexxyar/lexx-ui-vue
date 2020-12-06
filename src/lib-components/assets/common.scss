@@ -11,6 +11,7 @@
 @import 'switches';
 @import 'checkboxes';
 @import 'searchHelps';
+@import 'cards';
 
 * {
   margin: 0;
@@ -52,7 +53,7 @@ $spacers: ('m':'margin', 'p':'padding');
   }
 }
 
-.flex{
+.flex {
   display: flex;
   flex-wrap: wrap;
 }

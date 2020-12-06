@@ -6,7 +6,7 @@
       </router-link>
     </template>
     <template v-else>
-      <a :href="link">
+      <a :href="link" @click="$emit('click')">
         <slot></slot>
       </a>
     </template>
@@ -16,10 +16,10 @@
 <script>
 export default {
   name: "lxNavbarItem",
-    props: {
-      to: {type: String, default: ''},
-      link: {type: String, default: '#'}
-    }
+  props: {
+    to: {type: String, default: ''},
+    link: {type: String, default: '#'}
+  }
 }
 </script>
 
