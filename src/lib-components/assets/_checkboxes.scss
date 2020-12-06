@@ -1,0 +1,60 @@
+$lx-checkbox-size-box: 23px;
+
+.checkbox {
+  position: relative;
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: $lx-checkbox-size-box + 11;
+    color: $lx-color-dark;
+    line-height: $lx-checkbox-size-box + 4;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $lx-checkbox-size-box;
+      height: $lx-checkbox-size-box;
+      border-radius: 4px;
+      background: #fff;
+
+      border: 1px solid $lx-color-active;
+      box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-bottom: 3px solid #fff;
+      border-left: 3px solid #fff;
+      font-size: 1.4em;
+      transform: rotate(-50deg);
+      transition: all 0.1s;
+    }
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+
+    &:checked + label {
+      &:before {
+        border: 1px solid $lx-color-error;
+        background-color: $lx-color-error;
+        box-shadow: inset 0 1px 2px 0 transparent;
+      }
+
+      &:after {
+        top: 6px;
+        left: 4px;
+        opacity: 1;
+        width: 14px;
+        height: 5px;
+      }
+    }
+  }
+}

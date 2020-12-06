@@ -45,6 +45,10 @@ export default {
           cssClass: 'dark',
           hex: '#333333'
         },
+        {
+          cssClass: 'dark-lite',
+          hex: '#555555'
+        },
       ]
     })
   },
