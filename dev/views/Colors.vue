@@ -1,7 +1,7 @@
 <template>
   <div class="colors">
-    <div v-for="color in colors" :class="color.cssClass.substring(1)" class="item">
-      <div class="css-name" @click="onCopyToClipboard(color.cssClass)">{{ color.cssClass }}</div>
+    <div v-for="color in colors" :class="color.cssClass" class="item">
+      <div class="css-name" @click="onCopyToClipboard(color.cssClass)">.{{ color.cssClass }}</div>
       <div class="css-hex" @click="onCopyToClipboard(color.hex)">{{ color.hex }}</div>
     </div>
   </div>
@@ -14,35 +14,35 @@ export default {
     return ({
       colors: [
         {
-          cssClass: '.success',
+          cssClass: 'success',
           hex: '#8bc34a'
         },
         {
-          cssClass: '.error',
+          cssClass: 'error',
           hex: '#ff5722'
         },
         {
-          cssClass: '.info',
+          cssClass: 'info',
           hex: '#03a9f4'
         },
         {
-          cssClass: '.active',
+          cssClass: 'active',
           hex: '#9e9e9e'
         },
         {
-          cssClass: '.inactive',
+          cssClass: 'inactive',
           hex: '#d1d1d1'
         },
         {
-          cssClass: '.inactive-light',
+          cssClass: 'inactive-light',
           hex: '#f5f8ff'
         },
         {
-          cssClass: '.warning',
+          cssClass: 'warning',
           hex: '#ffc107'
         },
         {
-          cssClass: '.dark',
+          cssClass: 'dark',
           hex: '#333333'
         },
       ]
@@ -52,7 +52,6 @@ export default {
     onCopyToClipboard: function (text) {
       this.$clipboard(text);
       this.$toasted.info('Copied to clipboard');
-      console.log(text)
     }
   }
 }
