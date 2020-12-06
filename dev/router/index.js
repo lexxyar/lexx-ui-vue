@@ -50,6 +50,16 @@ const routes = [
         name: 'Gauges',
         component: () => import('../views/Gauges.vue')
     },
+    {
+        path: '/cards',
+        name: 'Cards',
+        component: () => import('../views/Cards.vue')
+    },
+    {
+        path: '/grids',
+        name: 'Grids',
+        component: () => import('../views/Grids.vue')
+    },
 ]
 
 const router = new VueRouter({

@@ -1,0 +1,22 @@
+.row {
+  //border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  //background-color: gray;
+  //border: 1px solid #333333;
+  //padding: 2rem;
+  width: auto;
+  flex: auto;
+}
+
+@for $i from 1 through $lx-config-columns-count {
+  .col-#{$i} {
+    //> * {
+    flex: 0 0 auto;
+    width: percentage($i / $lx-config-columns-count);
+    //}
+  }
+}
