@@ -6,6 +6,7 @@ $lx-color-active: #9e9e9e;
 $lx-color-inactive: #d1d1d1;
 $lx-color-inactive-light: #f5f8ff;
 $lx-color-dark: #333333;
+$lx-color-dark-lite: #555555;
 
 $lx-color-names: (
         "success":$lx-color-success,
@@ -14,6 +15,7 @@ $lx-color-names: (
         "info":$lx-color-info,
         "active":$lx-color-active,
         "dark":$lx-color-dark,
+        "dark-lite":$lx-color-dark-lite,
         "inactive":$lx-color-inactive,
         "inactive-light":$lx-color-inactive-light,
 );

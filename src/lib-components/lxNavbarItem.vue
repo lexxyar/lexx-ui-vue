@@ -16,10 +16,10 @@
 <script>
 export default {
   name: "lxNavbarItem",
-  props: {
-    to: {type: String, default: ''},
-    link: {type: String, default: '#'}
-  }
+    props: {
+      to: {type: String, default: ''},
+      link: {type: String, default: '#'}
+    }
 }
 </script>
 

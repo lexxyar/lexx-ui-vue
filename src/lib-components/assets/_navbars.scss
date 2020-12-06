@@ -30,7 +30,7 @@
     width: 100%;
     //transition: 5s;
 
-    .nav {
+    .nav, .nav-right {
       list-style: none;
       display: flex;
       justify-content: flex-start;
@@ -39,11 +39,91 @@
       li {
         padding: 0 .6rem;
 
+        &.dropdown-item {
+          position: relative;
+
+          &:last-child {
+            .dropdown-menu {
+              right: 0;
+              left: auto;
+            }
+          }
+
+          .item-title {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            & > div {
+              //height: 100%;
+            }
+
+            & > svg {
+              width: .7rem;
+              margin-left: .6rem;
+            }
+          }
+
+          .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: $lx-color-dark;
+            list-style: none;
+            left: 0;
+            top: 100%;
+            margin: 1.5rem 0 0;
+            //margin-top: 1.5rem;
+            box-sizing: border-box;
+            border: 1px solid $lx-color-dark-lite;
+            padding: 0;
+
+            li {
+              padding: 0;
+              border-bottom: 1px solid $lx-color-dark-lite;
+
+              &:hover {
+                background-color: rgba($lx-color-dark-lite, .2);
+              }
+
+              a {
+                display: block;
+                padding: .4rem .6rem;
+
+                &:hover {
+                  color: $lx-color-inactive-light;
+                }
+              }
+            }
+          }
+
+          &.expanded {
+            .dropdown-menu {
+              display: block;
+            }
+          }
+        }
+
         a {
           transition: all .3s ease 0s;
           text-decoration: none;
           color: $lx-color-inactive-light;
           font-size: 1.1rem;
+
+          & > * {
+            color: $lx-color-inactive-light;
+          }
+
+          .btn {
+            &:hover {
+              background-color: rgba($lx-color-inactive, .3);
+            }
+
+            &:active {
+              background-color: rgba($lx-color-inactive, .8);
+            }
+          }
 
           &:hover {
             color: $lx-color-info;
@@ -59,22 +139,6 @@
     color: $lx-color-inactive-light;
     position: relative;
     cursor: pointer;
-
-    &:before {
-      content: '\f0c9';
-      font-family: 'Font Awesome 5 Free';
-      color: $lx-color-inactive-light;
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-    }
-
-    &.toggled:before {
-      content: '\f00d';
-    }
   }
 }
 
@@ -97,7 +161,6 @@
 
 
         display: block;
-        //min-height: 100vh;
         position: relative;
 
         nav {
@@ -107,12 +170,10 @@
           bottom: 0;
           top: 0;
           width: 100%;
-          //height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
 
-          //margin-top: 1rem;
           .nav {
             display: block;
             margin-top: 2.6rem;
@@ -151,7 +212,7 @@
     .toggle {
       display: block;
       width: 24px;
-      margin-left: -24px;
+      margin-right: .8rem;
     }
   }
 }
