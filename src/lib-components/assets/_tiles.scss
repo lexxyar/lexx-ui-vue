@@ -3,6 +3,21 @@ $tile-header-height: 4rem;
 $tile-footer-height: 1.2rem;
 $tile-content-padding: .7rem;
 $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $tile-content-padding / 2;
+
+.tile-group {
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $lx-color-inactive;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .tile-group-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .tile {
   width: $tile-size;
   min-width: $tile-size;
@@ -17,7 +32,7 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
   cursor: pointer;
   transition: background-color .3s;
 
-  &.type-create{
+  &.type-create {
     border: 2px dashed $lx-color-inactive;
     color: $lx-color-inactive;
   }

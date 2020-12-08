@@ -12,12 +12,18 @@
 
 
   .content {
-
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+    > * {
+      margin-right: .2rem;
+    }
   }
 
   .content-right {
     display: flex;
     align-content: flex-end;
+    align-items: center;
 
     > * {
       margin-left: .1rem;

@@ -1,6 +1,6 @@
 {
   "name": "lexx-ui-vue",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Vue UI library by lexx",
   "main": "dist/lexx-ui-vue.ssr.js",
   "browser": "dist/lexx-ui-vue.esm.js",
@@ -16,7 +16,7 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "publish": "npm run build & npm publish"
+    "publish": "(npm run build) && (npm publish)"
   },
   "dependencies": {
     "vue-click-outside": "^1.1.0",

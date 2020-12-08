@@ -1,20 +1,24 @@
 <template>
   <div>
-    <div class="tile-container">
+    <lx-tile-group title="Guns">
       <template v-for="tile in tiles">
         <lxTile v-bind="tile"></lxTile>
       </template>
-    </div>
+    </lx-tile-group>
+    <lx-tile-group title="Empty tile group">
+      <lxTile type="create" title="Create tile"></lxTile>
+    </lx-tile-group>
   </div>
 </template>
 
 <script>
 
 import {lxTile} from '@/entry'
+import LxTileGroup from "@/lib-components/lxTileGroup";
 
 export default {
   name: "Tiles",
-  components: {lxTile},
+  components: {LxTileGroup, lxTile},
   data() {
     return ({
       tiles: [
@@ -39,8 +43,8 @@ export default {
 </script>
 
 <style scoped>
-.tile-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+/*.tile-container {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*}*/
 </style>

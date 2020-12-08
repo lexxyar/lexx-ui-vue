@@ -9,10 +9,12 @@ export {default as lxSearchHelp} from './lxSearchHelp.vue';
 export {default as lxSwitch} from './lxSwitch.vue';
 export {default as lxTable} from './lxTable.vue';
 export {default as lxTile} from './lxTile.vue';
+export {default as lxTileGroup} from './lxTileGroup.vue';
 export {default as lxGauge} from './lxGauge.vue';
 export {default as lxCard} from './lxCard.vue';
 export {default as lxSideNavItem} from './lxSideNavItem.vue';
 export {default as lxSideNav} from './lxSideNav.vue';
+export {default as lxToolBar} from './lxToolBar.vue';
 
 
 // import lxCheckbox from './lxCheckbox.vue';
