@@ -6,9 +6,9 @@ npm i lexx-ui-vue
 ```
 ```vuejs
 import Vue from "vue"
-import LexxUi from "lexx-ui-vue"
+import LexxUiVue from "lexx-ui-vue"
 
-Vue.use(LexxUi)
+Vue.use(LexxUiVue)
 ```
 ## Usage
 ```vue

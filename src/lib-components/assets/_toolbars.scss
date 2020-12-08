@@ -1,0 +1,26 @@
+.toolbar {
+  border-top: 1px solid $lx-color-active;
+  border-bottom: 1px solid $lx-color-active;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .2rem;
+
+  svg {
+    min-width: 1rem;
+  }
+
+
+  .content {
+
+  }
+
+  .content-right {
+    display: flex;
+    align-content: flex-end;
+
+    > * {
+      margin-left: .1rem;
+    }
+  }
+}

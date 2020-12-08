@@ -60,6 +60,11 @@ const routes = [
         name: 'Grids',
         component: () => import('../views/Grids.vue')
     },
+    {
+        path: '/toolbars',
+        name: 'Tools',
+        component: () => import('../views/Toolbars.vue')
+    },
 ]
 
 const router = new VueRouter({
