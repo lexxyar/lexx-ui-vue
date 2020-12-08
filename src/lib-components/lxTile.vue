@@ -88,9 +88,9 @@ export default {
     printScale: function () {
       return this.scale !== '0' && this.scale !== '' ? this.scale : '';
     },
-    getCss:function (){
+    getCss: function () {
       let aCss = []
-      if(this.qStyle){
+      if (this.qStyle) {
         aCss.push(`color-${this.qStyle}`)
       }
 
@@ -103,5 +103,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//@import "./common.scss";
+
 </style>

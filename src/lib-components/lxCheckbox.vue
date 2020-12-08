@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return ({
-      uuid: uuid.v1(),
+      uuid: uuid.v4(),
     })
   },
   computed: {

@@ -1,0 +1,92 @@
+.sidenav {
+  position: fixed;
+  width: $lx-config-sidenav-icon-size;
+  height: 100%;
+  background-color: $lx-color-dark;
+  transition: width .5s;
+  overflow: hidden;
+  z-index: $lx-config-menu-zindex;
+
+  &:hover, &.expanded {
+    width: $lx-config-sidenav-width;
+  }
+
+  ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $lx-color-inactive-light;
+
+    li {
+      position: relative;
+      width: 100%;
+      list-style: none;
+
+      &:hover {
+        background-color: $lx-color-dark-lite;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        color: $lx-color-inactive-light;
+        padding: 0 10px 0 0;
+        height: $lx-config-sidenav-icon-size;
+        line-height: $lx-config-sidenav-icon-size;
+        text-align: start;
+        white-space: nowrap;
+
+        .icon {
+          position: relative;
+          display: block;
+          min-width: $lx-config-sidenav-icon-size;
+          height: $lx-config-sidenav-icon-size;
+          line-height: $lx-config-sidenav-icon-size;
+          text-align: center;
+          font-size: $lx-config-sidenav-icon-font-size;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: $lx-config-min-screen-size) {
+  .sidenav {
+    left: -$lx-config-sidenav-icon-size;
+
+    &.expanded {
+      left: 0;
+      width: 100%;
+    }
+
+    .toggle {
+      position: absolute;
+      right: .5rem;
+      top: .5rem;
+      width: $lx-config-sidenav-icon-font-size;
+      height: $lx-config-sidenav-icon-font-size;
+      cursor: pointer;
+      z-index: $lx-config-menu-zindex;
+      color: $lx-color-inactive-light;
+      border-radius: 50%;
+      border: 1px solid $lx-color-inactive;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '\d7';
+        font-weight: 900;
+        width: 100%;
+        line-height: 1.1rem;
+        text-align: center;
+        font-size: $lx-config-sidenav-icon-font-size;
+        color: $lx-color-inactive-light;
+      }
+    }
+  }
+}

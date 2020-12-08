@@ -19,6 +19,7 @@
     "publish": "npm run build & npm publish"
   },
   "dependencies": {
+    "vue-click-outside": "^1.1.0",
     "vue-uuid": "^2.0.2"
   },
   "devDependencies": {

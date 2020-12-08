@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import LxInput from "./lxInput.vue";
-import LxModal from "./lxModal.vue";
-import LxTable from "./lxTable.vue";
+import lxInput from "./lxInput.vue";
+import lxModal from "./lxModal.vue";
+import lxTable from "./lxTable.vue";
 
 export default {
   name: "lxSearchHelp",
-  components: {LxTable, LxModal, LxInput},
+  components: {lxTable, lxModal, lxInput},
   props: {
     value: {},
     items: {type: Array},

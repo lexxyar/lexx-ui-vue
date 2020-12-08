@@ -1,5 +1,5 @@
 <template>
-  <li class="dropdown-item" @click="expanded = !expanded" :class="expanded?'expanded':''">
+  <li v-click-outside="hideMenu" class="dropdown-item" @click="expanded = !expanded" :class="expanded?'expanded':''">
     <div class="item-title">
       <div>
         {{ title }}
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
 export default {
   name: "lxNavbarDdItem",
   props: {
@@ -39,6 +40,15 @@ export default {
       expanded: false,
     })
   },
+  methods: {
+    hideMenu() {
+      this.expanded = false
+    }
+  },
+  // do not forget this section
+  directives: {
+    ClickOutside
+  }
 }
 </script>
 

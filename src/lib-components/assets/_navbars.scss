@@ -38,16 +38,17 @@
 
       li {
         padding: 0 .6rem;
+        white-space: nowrap;
 
         &.dropdown-item {
           position: relative;
 
-          &:last-child {
-            .dropdown-menu {
-              right: 0;
-              left: auto;
-            }
-          }
+          //&:last-child {
+          //  .dropdown-menu {
+          //    right: 0;
+          //    left: auto;
+          //  }
+          //}
 
           .item-title {
             display: flex;
@@ -77,6 +78,7 @@
             box-sizing: border-box;
             border: 1px solid $lx-color-dark-lite;
             padding: 0;
+            z-index: 1001;
 
             li {
               padding: 0;
@@ -131,6 +133,16 @@
       }
     }
 
+    .nav-right {
+      &.dropdown-item {
+        &:last-child {
+          .dropdown-menu {
+            right: 0;
+            left: auto;
+          }
+        }
+      }
+    }
   }
 
   .toggle {

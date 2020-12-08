@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return ({
-      uid: uuid.v1()
+      uid: uuid.v4()
     })
   },
   computed: {

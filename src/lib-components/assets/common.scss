@@ -14,18 +14,24 @@
 @import 'checkboxes';
 @import 'searchHelps';
 @import 'cards';
+@import 'sidenavs';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
   font-family: $lx-config-font-family;
   font-size: $lx-config-font-size;
   min-height: 100Vh;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -49,7 +55,7 @@ $spacers: ('m':'margin', 'p':'padding');
 @each $short, $spacer in $spacers {
   @each $name, $suffix in $side-list {
     @for $i from 0 through 5 {
-      #{$short}#{$name}-#{$i} {
+      .#{$short}#{$name}-#{$i} {
         #{$spacer}#{$suffix}: #{$i}rem;
       }
     }
