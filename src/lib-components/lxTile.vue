@@ -1,5 +1,5 @@
 <template>
-  <div class="tile" @click="$emit('click')" :class="`type-${type}`">
+  <div class="tile" @click="onTileClick" :class="`type-${type}`">
     <div class="header">
       <div class="title">{{ title }}</div>
       <div class="subtitle">{{ subtitle }}</div>
@@ -44,7 +44,36 @@
       </template>
     </div>
     <div class="footer">
-      {{ bottomText }}
+      <template v-if="mode=='text'">
+        {{ bottomText }}
+      </template>
+      <template v-else-if="mode=='action'">
+
+        <div class="tile-toolbar">
+          <a href="#" class="tile-edit" @click="onEditClick">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pencil-alt" role="img"
+                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                 class="svg-inline--fa fa-pencil-alt fa-w-16 fa-3x">
+              <path fill="currentColor"
+                    d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                    class=""></path>
+            </svg>
+            Edit
+          </a>
+          <a href="#" class="tile-delete" @click="onDeleteClick">
+            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" role="img"
+                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                 class="svg-inline--fa fa-trash-alt fa-w-14 fa-3x">
+              <path fill="currentColor"
+                    d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"
+                    class=""></path>
+            </svg>
+            Delete
+          </a>
+        </div>
+
+      </template>
+
     </div>
   </div>
 </template>
@@ -72,6 +101,13 @@ export default {
         return ['', 'success', 'error', 'info', 'warning'].indexOf(value) !== -1
       },
       default: ''
+    },
+    mode: {
+      type: String,
+      validator: function (value) {
+        return ['text', 'action'].indexOf(value) !== -1
+      },
+      default: 'text'
     }
   },
   methods: {
@@ -97,7 +133,22 @@ export default {
       aCss.push(`type-${this.type}`)
 
       return aCss.join(' ')
-    }
+    },
+    onTileClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      this.$emit('click')
+    },
+    onDeleteClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      this.$emit('delete')
+    },
+    onEditClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      this.$emit('edit')
+    },
   }
 }
 </script>

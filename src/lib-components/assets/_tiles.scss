@@ -53,11 +53,15 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
 
     .title {
       font-size: 1.4rem;
+      word-break: break-word;
+      overflow: hidden;
     }
 
     .subtitle {
       font-size: .8rem;
       color: $lx-color-active;
+      word-break: break-word;
+      overflow: hidden;
     }
   }
 
@@ -108,5 +112,48 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
     line-height: $tile-footer-height;
     color: $lx-color-active;
     text-align: right;
+    position: relative;
+
+    .tile-toolbar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-size: 0.9em;
+
+      a {
+        text-decoration: none;
+        color: $lx-color-active;
+        >svg{
+          width: .8rem;
+          height: 1.2rem;
+        }
+
+        &.tile-edit {
+          justify-self: flex-start;
+          padding-left: $tile-content-padding;
+
+          &:hover {
+            color: $lx-color-info;
+          }
+        }
+
+        &.tile-delete {
+          justify-self: end;
+          padding-right: $tile-content-padding;
+
+          &:hover {
+            color: $lx-color-error;
+          }
+        }
+
+        .far,
+        .fas {
+          font-size: 0.8em;
+        }
+      }
+    }
   }
 }

@@ -2,10 +2,12 @@
   <div>
     <lx-tile-group title="Guns">
       <template v-for="tile in tiles">
-        <lxTile v-bind="tile"></lxTile>
+        <lxTile v-bind="tile" @click="onClick"></lxTile>
       </template>
     </lx-tile-group>
     <lx-tile-group title="Empty tile group">
+      <lx-tile title="Action tile" mode="action" @edit="onEditClick" @delete="onDeleteClick" @click="onClick"
+               subtitle="w/buttons"/>
       <lxTile type="create" title="Create tile"></lxTile>
     </lx-tile-group>
   </div>
@@ -38,13 +40,20 @@ export default {
         {type: 'create', title: 'Create gun'},
       ],
     })
+  },
+  methods: {
+    onEditClick() {
+      console.log('edit')
+    },
+    onDeleteClick() {
+      console.log('delete')
+    },
+    onClick() {
+      console.log('click')
+    }
   }
 }
 </script>
 
 <style scoped>
-/*.tile-container {*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*}*/
 </style>
