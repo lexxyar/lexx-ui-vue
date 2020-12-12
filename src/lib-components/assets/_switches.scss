@@ -10,6 +10,12 @@ $slider-move: $slider-width - $slider-size - $slider-padding * 2;
   width: $slider-width;
   height: $slider-height;
 
+  &.readonly{
+    .slider{
+      background-color: rgba($lx-color-dark, .3);
+    }
+  }
+
   input {
     opacity: 0;
     width: 0;

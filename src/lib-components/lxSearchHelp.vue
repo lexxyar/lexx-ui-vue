@@ -1,8 +1,8 @@
 <template>
-  <div class="search-help">
-    <input type="text" :value="val" readonly>
+  <div class="search-help" :class="readonly?'readonly':''">
+    <input type="text" :value="val" readonly :disabled="readonly">
     <!--           @input="$emit('input', $event.target.value)">-->
-    <button class="btn" @click="show = true">
+    <button class="btn" @click="readonly?'':show = true">
       <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="clone" role="img"
            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clone fa-w-16 fa-3x">
         <path fill="currentColor"
@@ -33,6 +33,7 @@ export default {
     fields: {type: Array},
     keyField: {type: String},
     textField: {type: String},
+    readonly: {type: Boolean, default: false},
   },
   data() {
     return ({

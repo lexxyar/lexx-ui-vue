@@ -3,6 +3,15 @@
   display: flex;
   flex-wrap: nowrap;
 
+  &.readonly{
+    input{
+      background-color: $lx-color-inactive;
+    }
+    button, .btn{
+      background-color: $lx-color-inactive;
+    }
+  }
+
   input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

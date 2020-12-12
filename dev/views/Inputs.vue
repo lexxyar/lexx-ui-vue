@@ -13,6 +13,13 @@
         </lx-input>
       </template>
 
+      <lx-input v-model="input.value" :label="input.label" :readonly="true" />
+      <lx-input v-model="input.value" :label="input.label" :readonly="true">
+        <template v-if="true" #prepend>
+          $
+        </template>
+      </lx-input>
+
     </div>
 
     <div>
@@ -35,6 +42,7 @@
     <div>
       <h3>Switches</h3>
       <lx-switch/>
+      <lx-switch :readonly="true"/>
     </div>
 
     <div>
@@ -45,6 +53,14 @@
                       keyField="key"
                       text-field="value"/>
       <span>{{ shSelected }}</span>
+
+      <lx-search-help v-model="shSelected"
+                      :fields="shFields"
+                      :items="shValues"
+                      keyField="key"
+                      text-field="value"
+                      :readonly="true"
+      />
     </div>
   </div>
 </template>
@@ -57,6 +73,7 @@ export default {
   components: {lxSearchHelp, lxSwitch, lxCheckbox, lxInput},
   data() {
     return ({
+      input: {type: 'text', label: 'Disabled input', value: 'Disabled'},
       inputValues: [
         {type: 'text', label: '', value: 'Text value'},
         {type: 'text', label: 'Labeled input', value: 'Labeled'},

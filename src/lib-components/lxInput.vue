@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group">
+  <div class="input-group" :class="readonly?'readonly':''">
     <template v-if="emptyLabel || label">
       <label :for="uid" :class="label?'has-text':''">{{ label }}</label>
     </template>
@@ -8,7 +8,9 @@
         <slot name="prepend"></slot>
       </div>
       <input :type="type" :value="value" :id="uid" :class="hasAppend?'appended':''"
-             @input="$emit('input', $event.target.value)">
+             @input="$emit('input', $event.target.value)"
+             :readonly="readonly"
+      />
       <div class="input-extention append" v-if="hasAppend">
         <slot name="append"></slot>
       </div>
@@ -27,6 +29,7 @@ export default {
     type: {type: String, default: 'text'},
     label: {type: String, default: ''},
     emptyLabel: {type: Boolean, default: false},
+    readonly: {type: Boolean, default: false},
   },
   data() {
     return ({

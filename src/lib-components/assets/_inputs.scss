@@ -6,11 +6,19 @@ input {
   border-radius: $lx-config-border-radius;
   padding: $input-padding;
   width: inherit;
+
+
 }
 
 .input-group {
   display: flex;
   flex-wrap: nowrap;
+
+  &.readonly{
+    input, .prepend, .append{
+      background-color: $lx-color-inactive;
+    }
+  }
 
   label {
     white-space: nowrap;
