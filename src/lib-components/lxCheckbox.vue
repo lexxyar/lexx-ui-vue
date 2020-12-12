@@ -1,12 +1,13 @@
 <template>
-  <div class="checkbox">
+  <div class="checkbox" :class="readonly?'readonly':''">
     <input type="checkbox"
            v-model="model"
            :value="val"
            :id="uuid"
+           :disabled="readonly"
     />
     <label :for="uuid">
-      {{label}}
+      {{ label }}
     </label>
   </div>
 </template>
@@ -19,7 +20,8 @@ export default {
   props: {
     value: {},
     val: {},
-    label:{type:String}
+    label: {type: String},
+    readonly: {type: Boolean, default: false},
   },
   data() {
     return ({
@@ -32,7 +34,9 @@ export default {
         return this.value
       },
       set(val) {
-        this.$emit('input', val)
+        if (!this.readonly) {
+          this.$emit('input', val)
+        }
       }
     },
   },

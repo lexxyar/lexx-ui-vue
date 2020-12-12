@@ -4,7 +4,7 @@ $lx-checkbox-size-box: 23px;
   position: relative;
 
   label {
-    display: inline-block;
+    //display: inline-block;
     position: relative;
     padding-left: $lx-checkbox-size-box + 11;
     color: $lx-color-dark;
@@ -54,6 +54,23 @@ $lx-checkbox-size-box: 23px;
         opacity: 1;
         width: 14px;
         height: 5px;
+      }
+    }
+  }
+
+  &.readonly {
+    label{
+      cursor: default;
+      &:before{
+        background: $lx-color-inactive;
+      }
+    }
+    input[type="checkbox"] {
+      &:checked + label {
+        &:before {
+          border: 1px solid rgba($lx-color-error, .5);
+          background-color: rgba($lx-color-error, .5);
+        }
       }
     }
   }

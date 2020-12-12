@@ -21,6 +21,15 @@
         <lx-checkbox v-model="checked" :val="cb.value" :label="cb.label"/>
       </template>
       <span>{{ checked }}</span>
+
+      <template v-for="cb in checkboxes">
+        <div class="row h-2r" style="border-bottom: 1px solid black;">
+          <div class="col-1">{{ cb.value }}</div>
+          <div class="col-1">
+            <lx-checkbox v-model="checked" :val="cb.value" :readonly="true"/>
+          </div>
+        </div>
+      </template>
     </div>
 
     <div>
@@ -41,7 +50,8 @@
 </template>
 
 <script>
-import {lxSearchHelp, lxSwitch, lxCheckbox,lxInput} from '@/entry'
+import {lxSearchHelp, lxSwitch, lxCheckbox, lxInput} from '@/entry'
+
 export default {
   name: "Inputs",
   components: {lxSearchHelp, lxSwitch, lxCheckbox, lxInput},

@@ -76,4 +76,18 @@ $spacers: ('m':'margin', 'p':'padding');
   .h-#{$i}p {
     height: $i * 1%;
   }
+
+  .w-#{$i}x {
+    width: $i * 1px;
+  }
+  .h-#{$i}x {
+    height: $i * 1px;
+  }
+
+  .w-#{$i}r {
+    width: $i * 1rem;
+  }
+  .h-#{$i}r {
+    height: $i * 1rem;
+  }
 }
