@@ -134,6 +134,7 @@
     }
 
     .nav-right {
+      justify-content: flex-end;
       &.dropdown-item {
         &:last-child {
           .dropdown-menu {

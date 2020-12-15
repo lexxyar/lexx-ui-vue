@@ -6,8 +6,14 @@
       </template>
     </lx-tile-group>
     <lx-tile-group title="Empty tile group">
-      <lx-tile title="Action tile" mode="action" @edit="onEditClick" @delete="onDeleteClick" @click="onClick"
-               subtitle="w/buttons"/>
+      <lx-tile title="Action tile" mode="editable" @edit="onEditClick" @delete="onDeleteClick" @click="onClick"
+               subtitle="editable"/>
+      <lx-tile title="Action tile" mode="deletable" @edit="onEditClick" @delete="onDeleteClick" @click="onClick"
+               subtitle="deletable"/>
+      <lx-tile title="Action tile" mode="both" @edit="onEditClick" @delete="onDeleteClick" @click="onClick"
+               subtitle="both"/>
+      <lx-tile title="bottomText tile" @click="onClick"
+               bottomText="Footer text"/>
       <lxTile type="create" title="Create tile"></lxTile>
     </lx-tile-group>
   </div>

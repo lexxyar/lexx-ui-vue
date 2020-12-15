@@ -44,13 +44,13 @@
       </template>
     </div>
     <div class="footer">
-      <template v-if="mode=='text'">
+      <template v-if="mode=='none'">
         {{ bottomText }}
       </template>
-      <template v-else-if="mode=='action'">
+      <template v-else-if="mode==='editable' || mode==='deletable' || mode==='both'">
 
         <div class="tile-toolbar">
-          <a href="#" class="tile-edit" @click="onEditClick">
+          <a href="#" class="tile-edit" @click="onEditClick" v-if="mode==='editable' || mode==='both'">
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pencil-alt" role="img"
                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                  class="svg-inline--fa fa-pencil-alt fa-w-16 fa-3x">
@@ -60,7 +60,10 @@
             </svg>
             Edit
           </a>
-          <a href="#" class="tile-delete" @click="onDeleteClick">
+          <template v-else>
+            <span></span>
+          </template>
+          <a href="#" class="tile-delete" @click="onDeleteClick" v-if="mode==='deletable' || mode==='both'">
             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="trash-alt" role="img"
                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                  class="svg-inline--fa fa-trash-alt fa-w-14 fa-3x">
@@ -105,10 +108,11 @@ export default {
     mode: {
       type: String,
       validator: function (value) {
-        return ['text', 'action'].indexOf(value) !== -1
+        return ['none', 'editable', 'deletable', 'both'].indexOf(value) !== -1
       },
-      default: 'text'
-    }
+      default: 'none'
+    },
+
   },
   methods: {
     getProgressDirection: function () {
