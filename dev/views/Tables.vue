@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-2 mr-2">
     <lx-table :fields="fields" :items="items" @changeSort="changeSort"
               :sort-by="sortBy" :sort-desc="sortDesc">
       <template v-slot:name1="{ field, item }">

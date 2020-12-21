@@ -3,7 +3,7 @@
     <lx-modal :show="show" @onClose="show = false">
       This is modal content
     </lx-modal>
-    <button class="btn info" @click="show = !show">
+    <button class="btn info mt-5 m-auto" @click="show = !show">
       Show modal
     </button>
   </div>
@@ -24,5 +24,8 @@ export default {
 </script>
 
 <style scoped>
-
+.m-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

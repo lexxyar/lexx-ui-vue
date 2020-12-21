@@ -1,5 +1,5 @@
 .btn {
-  padding: .4rem 1rem;
+  padding: .5rem 1rem;
   background: none;
   font-size: 1.0rem;
   border: 1px solid $lx-color-active;
@@ -54,15 +54,35 @@
 
   &.iconed {
     //border-radius: 50%;
-    margin: 0;
-    padding: 0;
-    width: 2.3rem;
-    height: 2.2rem;
+    //margin: 0;
+    //padding: 0;
+    //width: 2.3rem;
+    //height: 2.2rem;
 
-    & > * {
-      width: 1rem;
-      font-size: 1rem;
-      line-height: 2.2rem;
+    //& > * {
+    //  width: 1rem;
+    //  font-size: 1rem;
+    //  line-height: 2.2rem;
+    //}
+  }
+}
+
+.button-group {
+  .btn {
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      border-right: none;
     }
   }
 }

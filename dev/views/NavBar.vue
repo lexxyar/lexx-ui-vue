@@ -51,5 +51,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.btn.iconed > svg{
+  height: .8rem;
+}
 </style>
