@@ -2,9 +2,12 @@
   <div>
     <lx-navbar>
       <template #title>Yore Logo</template>
-      <template v-for="route in $router.options.routes">
-        <lx-navbar-item :to="route.path">{{ route.name }}</lx-navbar-item>
-      </template>
+<!--      <template v-for="route in $router.options.routes">-->
+<!--        <lx-navbar-item :to="route.path">{{ route.name }}</lx-navbar-item>-->
+        <lx-navbar-item>Link 1</lx-navbar-item>
+        <lx-navbar-item>Link 2</lx-navbar-item>
+        <lx-navbar-item>Link 3</lx-navbar-item>
+<!--      </template>-->
       <template #right>
         <!--        <lx-navbar-item>Call</lx-navbar-item>-->
         <lx-navbar-item>

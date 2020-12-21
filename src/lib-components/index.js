@@ -15,24 +15,4 @@ export {default as lxCard} from './lxCard.vue';
 export {default as lxSideNavItem} from './lxSideNavItem.vue';
 export {default as lxSideNav} from './lxSideNav.vue';
 export {default as lxToolBar} from './lxToolBar.vue';
-
-
-// import lxCheckbox from './lxCheckbox.vue';
-// import lxInput from './lxInput.vue';
-// import lxModal from './lxModal.vue';
-// import lxNavbar from './lxNavbar.vue';
-// import lxNavbarItem from './lxNavbarItem.vue';
-// import lxNavbarDdItem from './lxNavbarDdItem.vue';
-// import lxSearchHelp from './lxSearchHelp.vue';
-// import lxSwitch from './lxSwitch.vue';
-// import lxTable from './lxTable.vue';
-// import lxTile from './lxTile.vue';
-// import lxGauge from './lxGauge.vue';
-// import lxCard from './lxCard.vue';
-//
-// const LexxUi = {
-//     lxCheckbox, lxInput, lxModal, lxNavbar, lxNavbarItem, lxNavbarDdItem,
-//     lxSearchHelp, lxSwitch, lxTable, lxTile, lxGauge, lxCard
-// }
-//
-// export default LexxUi
+export {default as lxRadio} from './lxRadio.vue';

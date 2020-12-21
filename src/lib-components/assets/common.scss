@@ -2,6 +2,7 @@
 
 @import 'config';
 @import 'colors';
+@import 'typography';
 @import 'grids';
 @import 'buttons';
 @import 'inputs';
@@ -16,6 +17,7 @@
 @import 'cards';
 @import 'sidenavs';
 @import 'toolbars';
+@import 'radiobuttons';
 
 * {
   margin: 0;
@@ -36,58 +38,11 @@ ul {
   width: 100%;
 }
 
-.container {
-  width: $lx-config-container-size;
-  max-width: $lx-config-container-size;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @each $name, $color in $lx-color-names {
   .#{$name} {
     background-color: $color;
   }
   .color-#{$name} {
     color: $color;
-  }
-}
-
-$side-list: ('':'', 't':'-top', 'b':'-bottom', 'l':'-left', 'r':'-right');
-$spacers: ('m':'margin', 'p':'padding');
-@each $short, $spacer in $spacers {
-  @each $name, $suffix in $side-list {
-    @for $i from 0 through 5 {
-      .#{$short}#{$name}-#{$i} {
-        #{$spacer}#{$suffix}: #{$i}rem;
-      }
-    }
-  }
-}
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@for $i from 0 through 100 {
-  .w-#{$i}p {
-    width: $i * 1%;
-  }
-  .h-#{$i}p {
-    height: $i * 1%;
-  }
-
-  .w-#{$i}x {
-    width: $i * 1px;
-  }
-  .h-#{$i}x {
-    height: $i * 1px;
-  }
-
-  .w-#{$i}r {
-    width: $i * 1rem;
-  }
-  .h-#{$i}r {
-    height: $i * 1rem;
   }
 }

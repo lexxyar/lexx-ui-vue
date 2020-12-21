@@ -1,0 +1,70 @@
+h1, h2, h3, h4, h5, h6 {
+  a[href^="#"] {
+    text-decoration: none;
+    color: $lx-color-active;
+    font-weight: normal;
+
+    &:before {
+      content: "# ";
+    }
+
+    &:hover {
+      color: darken($lx-color-active, 15);
+    }
+  }
+}
+
+.container {
+  width: $lx-config-container-size;
+  max-width: $lx-config-container-size;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$side-list: ('':'', 't':'-top', 'b':'-bottom', 'l':'-left', 'r':'-right');
+$spacers: ('m':'margin', 'p':'padding');
+@each $short, $spacer in $spacers {
+  @each $name, $suffix in $side-list {
+    @for $i from 0 through 5 {
+      .#{$short}#{$name}-#{$i} {
+        #{$spacer}#{$suffix}: #{$i}rem;
+      }
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .w-#{$i}p {
+    width: $i * 1%;
+  }
+  .h-#{$i}p {
+    height: $i * 1%;
+  }
+
+  .w-#{$i}x {
+    width: $i * 1px;
+  }
+  .h-#{$i}x {
+    height: $i * 1px;
+  }
+
+  .w-#{$i}r {
+    width: $i * 1rem;
+  }
+  .h-#{$i}r {
+    height: $i * 1rem;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-middle {
+  align-items: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}

@@ -1,4 +1,4 @@
-$input-padding: .2rem;
+$input-padding: .5rem 1rem;
 input {
   font-size: 1rem;
   outline: none;
@@ -7,6 +7,9 @@ input {
   padding: $input-padding;
   width: inherit;
 
+  &::placeholder {
+    color: $lx-color-inactive;
+  }
 
 }
 
@@ -14,9 +17,10 @@ input {
   display: flex;
   flex-wrap: nowrap;
 
-  &.readonly{
-    input, .prepend, .append{
-      background-color: $lx-color-inactive;
+  &.readonly {
+    input, .prepend, .append {
+      background-color: $lx-color-inactive-light;
+      border-color: $lx-color-inactive !important;
     }
   }
 
@@ -24,7 +28,21 @@ input {
     white-space: nowrap;
     width: 10rem;
     font-size: 1rem;
-    line-height: 1.6rem;
+    //line-height: 1.6rem;
+    display: flex;
+    align-items: center;
+
+    &.sm {
+      width: 4rem;
+    }
+
+    &.lg {
+      width: 18rem;
+    }
+
+    &.xl {
+      width: 30rem;
+    }
 
     &.has-text {
       border-bottom: 1px dotted $lx-color-inactive;
@@ -45,7 +63,7 @@ input {
       border: 1px solid $lx-color-active;
       border-radius: $lx-config-border-radius;
       padding: $input-padding;
-      min-width: 1.6rem;
+      //min-width: 1.6rem;
       text-align: center;
 
       &.prepend {

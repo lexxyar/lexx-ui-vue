@@ -1,92 +1,158 @@
 <template>
   <div>
     <div>
-      <h3>Inputs</h3>
-      <template v-for="val in inputValues">
-        <lx-input v-model="val.value" :label="val.label" :type="val.type">
-          <template v-if="val.iconprepend" v-slot:prepend>
-            L
-          </template>
-          <template v-if="val.iconappend" v-slot:append>
-            $
-          </template>
-        </lx-input>
-      </template>
+      <h2 class="mb-1"><a href="#simple_inputs">Inputs</a></h2>
+      <div class="row">
+        <div class="col-8">
+          <h4 class="mb-1 mt-1"><a href="#">Simple input</a></h4>
+          <lx-input class="mb-1" placeholder="Search text..."></lx-input>
 
-      <lx-input v-model="input.value" :label="input.label" :readonly="true" />
-      <lx-input v-model="input.value" :label="input.label" :readonly="true">
-        <template v-if="true" #prepend>
-          $
-        </template>
-      </lx-input>
+          <h4 class="mb-1 mt-2"><a href="#">Labeled input</a></h4>
+          <lx-input class="mb-1" label="Search input" placeholder="Search text..."></lx-input>
 
-    </div>
+          <h4 class="mb-1 mt-2"><a href="#">Label size</a></h4>
+          <lx-input class="mb-1" label="Small" labelSize="sm" placeholder="Search text..."></lx-input>
+          <lx-input class="mb-1" label="Default" placeholder="Search text..."></lx-input>
+          <lx-input class="mb-1" label="Large" labelSize="lg" placeholder="Search text..."></lx-input>
+          <lx-input class="mb-1" label="Extra large" labelSize="xl" placeholder="Search text..."></lx-input>
 
-    <div>
-      <h3>Checkboxes</h3>
-      <template v-for="cb in checkboxes">
-        <lx-checkbox v-model="checked" :val="cb.value" :label="cb.label"/>
-      </template>
-      <span>{{ checked }}</span>
+          <h4 class="mb-1 mt-2"><a href="#">Input type</a></h4>
+          <lx-input class="mb-1" label="Text" value="Simple text"></lx-input>
+          <lx-input class="mb-1" type="password" label="Password" value="Password"></lx-input>
+          <lx-input class="mb-1" type="number" label="Number" value="99.90"></lx-input>
 
-      <template v-for="cb in checkboxes">
-        <div class="row h-2r" style="border-bottom: 1px solid black;">
-          <div class="col-1">{{ cb.value }}</div>
-          <div class="col-1">
-            <lx-checkbox v-model="checked" :val="cb.value" :readonly="true"/>
-          </div>
+          <h4 class="mb-1 mt-2"><a href="#">Extended input</a></h4>
+          <lx-input label="Prepend" type="number" class="mb-1" value="99.90">
+            <template #prepend>$</template>
+          </lx-input>
+          <lx-input label="Append" placeholder="Put e-mail here" class="mb-1">
+            <template #append>@mail.com</template>
+          </lx-input>
+          <lx-input label="Both" placeholder="subdomain" class="mb-1">
+            <template #prepend>domain.</template>
+            <template #append>.com</template>
+          </lx-input>
+
+          <h4 class="mb-1 mt-2"><a href="#">Disabled input</a></h4>
+          <lx-input label="Disabled input" :readonly="true" class="mb-1" value="readonly"/>
+          <lx-input label="Calculated price" label-size="xl" :readonly="true" class="mb-1" type="number" value="99.90">
+            <template v-if="true" #prepend>$</template>
+          </lx-input>
+
         </div>
-      </template>
+      </div>
     </div>
 
-    <div>
-      <h3>Switches</h3>
-      <lx-switch/>
-      <lx-switch :readonly="true"/>
+    <div class="mt-2">
+      <h2 class="mb-1"><a href="#checkboxes">Checkboxes</a></h2>
+      <div class="row">
+        <div class="col-6">
+          <h4 class="mb-1"><a href="#">Normal</a></h4>
+          <template v-for="cb in checkboxes">
+            <lx-checkbox v-model="checked" :val="cb.value" :label="cb.label"/>
+          </template>
+          <div class="mt-1 mb-1">Selected values: {{ checked }}</div>
+
+          <h4 class="mb-1 mt-2"><a href="#">Disabled</a></h4>
+          <template v-for="cb in checkboxes">
+            <div class="row h-2r" style="border-bottom: 1px solid black;">
+              <div class="col-6 flex flex-middle">{{ cb.value }}</div>
+              <div class="col-6 flex flex-end">
+                <lx-checkbox v-model="checked" :val="cb.value" :readonly="true"/>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <h3>Search Help</h3>
-      <lx-search-help v-model="shSelected"
-                      :fields="shFields"
-                      :items="shValues"
-                      keyField="key"
-                      text-field="value"/>
-      <span>{{ shSelected }}</span>
+    <div class="mt-2">
+      <h2 class="mb-1"><a href="#radiobuttons">Radiobuttons</a></h2>
+      <div class="row">
+        <div class="col-6">
+          <h4 class="mb-1"><a href="#">Normal</a></h4>
+          <template v-for="rb in radiobuttons">
+            <lx-radio v-model="rbChecked" :val="rb.value" :label="rb.label" :group="rb.group"/>
+          </template>
+          <div class="mt-1 mb-1">Selected value: {{ rbChecked }}</div>
 
-      <lx-search-help v-model="shSelected"
-                      :fields="shFields"
-                      :items="shValues"
-                      keyField="key"
-                      text-field="value"
-                      :readonly="true"
-      />
+          <h4 class="mb-1 mt-2"><a href="#">Disabled</a></h4>
+          <template v-for="rb in radiobuttons">
+            <div class="row h-2r" style="border-bottom: 1px solid black;">
+              <div class="col-6 flex flex-middle">{{ rb.value }}</div>
+              <div class="col-6 flex flex-end">
+                <lx-radio v-model="rbChecked" :val="rb.value" :group="`${rb.group}_1`" :readonly="true"/>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <h2 class="mb-1"><a href="#switches">Switches</a></h2>
+      <div class="row">
+        <div class="col-6">
+          <h4 class="mb-1"><a href="#">Normal</a></h4>
+          <lx-switch v-model="switchState"/>
+          <div>Switch state: {{switchState}}</div>
+
+          <h4 class="mb-1 mt-1"><a href="#">Disabled</a></h4>
+          <lx-switch :readonly="true" v-model="switchState"/>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <h2 class="mb-1"><a href="#search_help">Search Help</a></h2>
+      <div class="row">
+        <div class="col-6">
+          <h4 class="mb-1"><a href="#">Normal</a></h4>
+          <lx-search-help v-model="shSelected"
+                          :fields="shFields"
+                          :items="shValues"
+                          keyField="key"
+                          text-field="value" class="mb-1"/>
+          <div class="mb-2">Selected keys: {{ shSelected }}</div>
+
+          <h4 class="mb-1"><a href="#">Disabled</a></h4>
+          <lx-search-help v-model="shSelected"
+                          :fields="shFields"
+                          :items="shValues"
+                          keyField="key"
+                          text-field="value"
+                          :readonly="true"
+                          class="mb-5"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import {lxSearchHelp, lxSwitch, lxCheckbox, lxInput} from '@/entry'
+import LxRadio from "@/lib-components/lxRadio";
 
 export default {
   name: "Inputs",
-  components: {lxSearchHelp, lxSwitch, lxCheckbox, lxInput},
+  components: {LxRadio, lxSearchHelp, lxSwitch, lxCheckbox, lxInput},
   data() {
     return ({
-      input: {type: 'text', label: 'Disabled input', value: 'Disabled'},
-      inputValues: [
-        {type: 'text', label: '', value: 'Text value'},
-        {type: 'text', label: 'Labeled input', value: 'Labeled'},
-        {type: 'password', label: 'Password', value: 'password'},
-        {type: 'password', value: 'password', iconprepend: 'true'},
-        {type: 'number', value: '99.90', label: 'Price', iconappend: 'true'},
-      ],
       checkboxes: [
         {label: 'Checkbox 1', value: 'CB1'},
         {label: 'Checkbox 2', value: 'CB2'},
         {label: 'Checkbox 3', value: 'CB3'},
       ],
       checked: ['CB3'],
+      radiobuttons:[
+        {label:'Ready', value:'ready', group:'gr1'},
+        {label:'Steady', value:'steady', group:'gr1'},
+        {label:'Go', value:'go', group:'gr1'},
+      ],
+      rbChecked:'go',
+      switchState:false,
       shValues: [
         {key: 'key1', value: 'Key 1'},
         {key: 'key2', value: 'Key 2'},
@@ -103,6 +169,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
