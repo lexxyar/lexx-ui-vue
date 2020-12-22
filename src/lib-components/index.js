@@ -16,3 +16,4 @@ export {default as lxSideNavItem} from './lxSideNavItem.vue';
 export {default as lxSideNav} from './lxSideNav.vue';
 export {default as lxToolBar} from './lxToolBar.vue';
 export {default as lxRadio} from './lxRadio.vue';
+export {default as lxCalendar} from './lxCalendar.vue';

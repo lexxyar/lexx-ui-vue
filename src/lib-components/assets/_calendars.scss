@@ -1,0 +1,117 @@
+.calendar {
+  box-sizing: border-box;
+  border: 1px solid $lx-color-inactive;
+  border-radius: $lx-config-border-radius;
+  width: $lx-calendar-config-width;
+  //padding: $lx-calendar-config-padding;
+
+  .calendar-container {
+
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: $lx-calendar-config-cell-day-width ($lx-calendar-config-cell-day-width * 5) $lx-calendar-config-cell-day-width;
+    background-color: $lx-color-inactive;
+    padding: .1rem $lx-calendar-config-padding;
+    line-height: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $lx-color-dark;
+      font-weight: 600;
+
+      &.left, &.right {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &.right {
+      }
+
+      &.period {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .body {
+    padding: $lx-calendar-config-padding;
+
+    .week {
+      display: grid;
+      grid-template-columns: repeat(7, $lx-calendar-config-cell-day-width);
+
+
+      .day {
+        width: $lx-calendar-config-cell-day-width;
+        height: $lx-calendar-config-cell-day-width;
+        display: flex;
+        font-size: 1rem;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: font-weight, background-color .2s ease-out;
+
+        &.day-header{
+          cursor: default;
+        }
+
+        &:hover:not(.day-header) {
+          font-weight: 600;
+          background-color: $lx-color-warning;;
+
+          &.weekend {
+            background-color: $lx-color-warning;
+          }
+        }
+
+        &.weekend {
+          background-color: $lx-color-inactive;
+
+          &.other-month {
+            color: $lx-color-inactive-light;
+          }
+        }
+
+        &.today {
+          box-sizing: border-box;
+          border: 1px solid $lx-color-error;
+        }
+
+        &.other-month {
+          color: $lx-color-inactive;
+        }
+
+        &.selected{
+          background-color: $lx-color-info;
+        }
+      }
+    }
+
+    .quart {
+      display: grid;
+      grid-template-columns: repeat(3, $lx-calendar-config-cell-month-width);
+
+      .month {
+        display: flex;
+        padding: .7rem;
+        font-size: 1rem;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: font-weight, background-color .2s ease-out;
+
+        &:hover {
+          font-weight: 600;
+          background-color: $lx-color-warning;
+        }
+      }
+    }
+  }
+}

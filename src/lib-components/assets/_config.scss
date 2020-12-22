@@ -8,3 +8,7 @@ $lx-config-sidenav-icon-size: 60px;
 $lx-config-sidenav-icon-font-size: 1.5rem;
 $lx-config-sidenav-width: 300px;
 $lx-config-menu-zindex: 1024;
+$lx-calendar-config-cell-day-width: 2rem;
+$lx-calendar-config-padding: $lx-calendar-config-cell-day-width / 4;
+$lx-calendar-config-width: $lx-calendar-config-cell-day-width * 7 + $lx-calendar-config-padding * 2;
+$lx-calendar-config-cell-month-width: $lx-calendar-config-cell-day-width * 7 / 3;

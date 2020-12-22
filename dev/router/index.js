@@ -60,10 +60,15 @@ const routes = [
         name: 'Grids',
         component: () => import('../views/Grids.vue')
     },
+    // {
+    //     path: '/toolbars',
+    //     name: 'Tools',
+    //     component: () => import('../views/Toolbars.vue')
+    // },
     {
-        path: '/toolbars',
-        name: 'Tools',
-        component: () => import('../views/Toolbars.vue')
+        path: '/calendars',
+        name: 'Calendar',
+        component: () => import('../views/Calendars.vue')
     },
 ]
 
