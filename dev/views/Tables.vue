@@ -2,15 +2,15 @@
   <div class="mt-2 mr-2">
     <lx-table :fields="fields" :items="items" @changeSort="changeSort"
               :sort-by="sortBy" :sort-desc="sortDesc">
-      <template v-slot:name1="{ field, item }">
+      <template #name1="{ field, item }">
         *
-<!--        <fa-icon v-if="item.sex === 'F'" icon="venus"/>-->
-<!--        <fa-icon v-else-if="item.sex === 'M'" icon="mars"/>-->
-<!--        <fa-icon v-else icon="genderless"/>-->
         <a :href="'#mailto:'+item.email">
           {{ getItemValue(field, item) }}
         </a>
       </template>
+<!--      <template #phone="{ field, item }">-->
+<!--        {{ getItemValue(field, item) }}-->
+<!--      </template>-->
     </lx-table>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
           filter: '',
           fnFilter: this.makeFilter
         },
-        {key: 'phone', label: 'Телефон'},
+        {key: 'phone', label: 'Телефон', css:'flex-end'},
         {
           key: 'company',
           label: 'Компания',

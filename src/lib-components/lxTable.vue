@@ -2,7 +2,7 @@
   <table class="table">
     <thead>
     <tr>
-      <th v-for="field in fields" :key="field.key">
+      <th v-for="field in fields" :key="field.key" :class="field.css">
         <div class="title-container">
           <div class="caption">
             <template v-if="field.sortable">
@@ -45,10 +45,10 @@
     <tbody>
     <tr v-for="(item,index) in items" :key="index" @click="onRowClick(item)">
       <template v-for="field in fields">
-        <td v-if="typeof $scopedSlots[field.key] !== 'undefined'">
+        <td v-if="typeof $scopedSlots[field.key] !== 'undefined'" :class="field.css">
           <slot :name="field.key" :field="field" :item="item"></slot>
         </td>
-        <td v-else>
+        <td v-else :class="field.css">
           {{ getItemValue(field, item) }}
         </td>
       </template>
@@ -76,7 +76,11 @@ export default {
     sortDesc: {
       type: Boolean,
       value: false
-    }
+    },
+    // scopedCss: {
+    //   type: String,
+    //   default: ''
+    // }
   },
   methods: {
     getItemValue: (field, item) => {
