@@ -35,6 +35,7 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
   &.type-create {
     border: 2px dashed $lx-color-inactive;
     color: $lx-color-inactive;
+    font-size: 5rem;
   }
 
   &:hover {
@@ -98,9 +99,9 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
       align-items: center;
       justify-content: center;
 
-      svg {
-        width: 2rem;
-      }
+      //svg {
+      //  width: 2rem;
+      //}
     }
   }
 
@@ -126,10 +127,10 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
       a {
         text-decoration: none;
         color: $lx-color-active;
-        >svg{
-          width: .8rem;
-          height: 1.2rem;
-        }
+        //>svg{
+        //  width: .8rem;
+        //  height: 1.2rem;
+        //}
 
         &.tile-edit {
           justify-self: flex-start;
@@ -149,10 +150,10 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
           }
         }
 
-        .far,
-        .fas {
-          font-size: 0.8em;
-        }
+        //.far,
+        //.fas {
+        //  font-size: 0.8em;
+        //}
       }
     }
   }
