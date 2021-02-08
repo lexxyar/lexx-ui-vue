@@ -59,6 +59,10 @@ $lx-gauge-height: 200px;
         content: attr(data-value);
         position: absolute;
         bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        //text-shadow: 0 0 10px #fff;
       }
     }
 

@@ -9,6 +9,13 @@
         Card footer
       </template>
     </lx-card>
+
+    <pre>
+            <code class="language-js">
+
+            </code>
+        </pre>
+
   </div>
 </template>
 
@@ -17,7 +24,7 @@ import {lxCard} from "@/entry";
 
 export default {
   name: "Cards",
-  components: {lxCard}
+  components: {lxCard},
 }
 </script>
 

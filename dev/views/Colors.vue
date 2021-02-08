@@ -1,6 +1,6 @@
 <template>
   <div class="colors">
-    <div v-for="color in colors" :class="color.cssClass" class="item">
+    <div v-for="color in colors" :class="color.cssClass" class="item" :ref="color.cssClass">
       <div class="css-name" @click="onCopyToClipboard(color.cssClass)">.{{ color.cssClass }}</div>
       <div class="css-hex" @click="onCopyToClipboard(color.hex)">{{ color.hex }}</div>
     </div>
@@ -14,48 +14,84 @@ export default {
     return ({
       colors: [
         {
+          cssClass: 'primary',
+          hex: '#000000'
+        },
+        {
+          cssClass: 'secondary',
+          hex: '#000000'
+        },
+        {
           cssClass: 'success',
-          hex: '#8bc34a'
+          hex: '#000000'
         },
         {
           cssClass: 'error',
-          hex: '#ff5722'
+          hex: '#000000'
         },
         {
           cssClass: 'info',
-          hex: '#03a9f4'
+          hex: '#000000'
         },
-        {
-          cssClass: 'active',
-          hex: '#9e9e9e'
-        },
-        {
-          cssClass: 'inactive',
-          hex: '#d1d1d1'
-        },
-        {
-          cssClass: 'inactive-light',
-          hex: '#f5f8ff'
-        },
+        // {
+        //   cssClass: 'active',
+        //   hex: '#9e9e9e'
+        // },
+        // {
+        //   cssClass: 'inactive',
+        //   hex: '#d1d1d1'
+        // },
+        // {
+        //   cssClass: 'inactive-light',
+        //   hex: '#f5f8ff'
+        // },
         {
           cssClass: 'warning',
-          hex: '#ffc107'
+          hex: '#000000'
         },
         {
           cssClass: 'dark',
-          hex: '#333333'
+          hex: '#000000'
         },
         {
-          cssClass: 'dark-lite',
-          hex: '#555555'
+          cssClass: 'light',
+          hex: '#000000'
         },
+        // {
+        //   cssClass: 'dark-lite',
+        //   hex: '#555555'
+        // },
       ]
+    })
+  },
+  mounted() {
+    this.colors.map((color,idx)=>{
+      let rgb = getComputedStyle(this.$refs[color.cssClass][0]).getPropertyValue('background-color')
+      this.colors[idx].hex = this.rgbToHex(rgb)
+      console.log()
     })
   },
   methods: {
     onCopyToClipboard: function (text) {
       this.$clipboard(text);
       this.$toasted.info('Copied to clipboard');
+    },
+    rgbToHex(rgb) {
+      var rgbRegex = /^rgb\(\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*\)$/;
+      var result, r, g, b, hex = "";
+      if ( (result = rgbRegex.exec(rgb)) ) {
+        r = this.componentFromStr(result[1], result[2]);
+        g = this.componentFromStr(result[3], result[4]);
+        b = this.componentFromStr(result[5], result[6]);
+
+        hex = "#" + (0x1000000 + (r << 16) + (g << 8) + b).toString(16).slice(1);
+      }
+      return hex;
+    },
+    componentFromStr(numStr, percent) {
+      var num = Math.max(0, parseInt(numStr, 10));
+      return percent ?
+          Math.floor(255 * Math.min(100, num) / 100) : Math.min(255, num);
     }
   }
 }

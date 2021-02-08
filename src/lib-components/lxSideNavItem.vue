@@ -1,14 +1,13 @@
 <template>
-  <li>
+
+  <li class="item" :class="`item-${uid}`">
     <template v-if="to">
       <router-link :to="to">
-        <span class="icon"><slot name="icon"></slot></span>
         <slot></slot>
       </router-link>
     </template>
     <template v-else>
       <a :href="link" @click="$emit('click')">
-        <span class="icon"><slot name="icon"></slot></span>
         <slot></slot>
       </a>
     </template>
@@ -16,12 +15,19 @@
 </template>
 
 <script>
+import {uuid} from "vue-uuid";
+
 export default {
   name: "lxSideNavItem",
   props: {
     link: {type: String, default: '#'},
     to: {type: String, default: ''},
   },
+  data(){
+    return({
+      uid: uuid.v4()
+    })
+  }
 }
 </script>
 

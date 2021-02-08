@@ -1,92 +1,111 @@
-.sidenav {
-  position: fixed;
-  width: $lx-config-sidenav-icon-size;
+.sidebar {
   height: 100%;
-  background-color: $lx-color-dark;
-  transition: width .5s;
-  overflow: hidden;
-  z-index: $lx-config-menu-zindex;
+  position: fixed !important;
+  width: 25%;
+  left: -25%;
+  transition: all linear 0.4s;
+  z-index: 1024;
+  overflow: visible;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 
-  &:hover, &.expanded {
-    width: $lx-config-sidenav-width;
+
+  .sidebar-toggle {
+    position: absolute;
+    right: 0;
+    margin-right: -1.3rem;
+    margin-top: .6rem;
+    width: 1.4rem;
+    height: 1.3rem;
+    background-color: inherit;
+    display: block;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-left: none;
+    outline: none;
+  }
+
+  .title {
+    margin-top: .5rem;
+    padding: .5rem 1.2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-dark-rgba-500);
+  }
+
+  &.sidebar__opened {
+    left: 0;
   }
 
   ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: $lx-color-inactive-light;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .5rem;
 
-    li {
-      position: relative;
-      width: 100%;
-      list-style: none;
+    &:not(:first-child):not(.submenu) {
+      border-top: 1px solid var(--color-dark-rgba-300);
+    }
+  }
 
-      &:hover {
-        background-color: $lx-color-dark-lite;
+  .item {
+    &:hover {
+      background-color: var(--color-dark-rgba-100);
+    }
+
+    a {
+      color: var(--color-dark);
+      text-decoration: none;
+      display: block;
+      padding: .5rem 1.2rem;
+    }
+
+    &.active {
+      a {
+        color: var(--color-primary);
+      }
+    }
+
+    &.item-dropdown {
+      padding: .5rem 0;
+      cursor: pointer;
+
+      span {
+        padding-left: 1.2rem;
       }
 
-      a {
-        position: relative;
-        display: flex;
-        width: 100%;
-        text-decoration: none;
-        color: $lx-color-inactive-light;
-        padding: 0 10px 0 0;
-        height: $lx-config-sidenav-icon-size;
-        line-height: $lx-config-sidenav-icon-size;
-        text-align: start;
-        white-space: nowrap;
+      &::before {
+        content: '\25BC';
+        position: absolute;
+        right: .7rem;
+      }
 
-        .icon {
-          position: relative;
-          display: block;
-          min-width: $lx-config-sidenav-icon-size;
-          height: $lx-config-sidenav-icon-size;
-          line-height: $lx-config-sidenav-icon-size;
-          text-align: center;
-          font-size: $lx-config-sidenav-icon-font-size;
+      &.expanded {
+        padding-bottom: 0;
+
+        &:hover {
+          background-color: transparent;
         }
+
+        &::before {
+          content: '\25B2';
+        }
+
+        .submenu {
+          height: auto;
+          visibility: visible;
+          padding-left: 1rem;
+          margin-top: .5rem;
+        }
+      }
+
+      .submenu {
+        visibility: hidden;
+        height: 0;
+        background-color: var(--color-dark-rgba-100);
       }
     }
   }
-}
 
-
-@media (max-width: $lx-config-min-screen-size) {
-  .sidenav {
-    left: -$lx-config-sidenav-icon-size;
-
-    &.expanded {
-      left: 0;
-      width: 100%;
-    }
-
-    .toggle {
-      position: absolute;
-      right: .5rem;
-      top: .5rem;
-      width: $lx-config-sidenav-icon-font-size;
-      height: $lx-config-sidenav-icon-font-size;
-      cursor: pointer;
-      z-index: $lx-config-menu-zindex;
-      color: $lx-color-inactive-light;
-      border-radius: 50%;
-      border: 1px solid $lx-color-inactive;
-
-      &:before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: '\d7';
-        font-weight: 900;
-        width: 100%;
-        line-height: 1.1rem;
-        text-align: center;
-        font-size: $lx-config-sidenav-icon-font-size;
-        color: $lx-color-inactive-light;
-      }
-    }
+  &.sidebar__opened + .main-content {
+    margin-left: 25%;
   }
 }

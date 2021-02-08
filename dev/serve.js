@@ -5,7 +5,6 @@ import LexxUi from '@/entry';
 import Clipboard from 'v-clipboard'
 import Toasted from 'vue-toasted'
 
-
 Vue.use(LexxUi)
 Vue.use(Clipboard)
 Vue.use(Toasted, {

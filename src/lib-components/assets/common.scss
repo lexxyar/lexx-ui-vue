@@ -2,6 +2,9 @@
 
 @import 'config';
 @import 'colors';
+@import 'utils/helpers';
+
+/*
 @import 'typography';
 @import 'grids';
 @import 'buttons';
@@ -15,10 +18,28 @@
 @import 'checkboxes';
 @import 'searchHelps';
 @import 'cards';
+*/
 @import 'sidenavs';
+/*
 @import 'toolbars';
 @import 'radiobuttons';
 @import 'calendars';
+*/
+
+
+
+:root {
+  @each $name, $color in $theme-colors {
+    --color-#{$name}: #{$color};
+    --color-#{$name}-rgb: #{toRGB($color)};
+
+    @for $i from 1 through 9 {
+      --color-#{$name}-rgba-#{$i * 100}: #{toRGBA($color, $i / 10)};
+    }
+
+
+  }
+}
 
 * {
   margin: 0;
@@ -30,6 +51,11 @@ body {
   font-family: $lx-config-font-family;
   font-size: $lx-config-font-size;
   min-height: 100Vh;
+  color: map-get($theme-colors, "dark");
+}
+
+a {
+  //color: map-get($theme-colors, "dark");
 }
 
 ul {
@@ -39,7 +65,15 @@ ul {
   width: 100%;
 }
 
-@each $name, $color in $lx-color-names {
+//@each $name, $color in $lx-color-names {
+//  .#{$name} {
+//    background-color: $color;
+//  }
+//  .color-#{$name} {
+//    color: $color;
+//  }
+//}
+@each $name, $color in $theme-colors {
   .#{$name} {
     background-color: $color;
   }
@@ -47,3 +81,4 @@ ul {
     color: $color;
   }
 }
+

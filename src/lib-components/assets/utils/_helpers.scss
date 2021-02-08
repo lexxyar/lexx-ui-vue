@@ -1,0 +1,6 @@
+@function toRGB ($color) {
+  @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}
+@function toRGBA ($color, $transparent) {
+  @return "rgba(" + red($color) + ", " + green($color) + ", " + blue($color)+ ", " + $transparent + ")";
+}
