@@ -16,6 +16,22 @@
                bottomText="Footer text"/>
       <lxTile type="create" title="Create tile"></lxTile>
     </lx-tile-group>
+
+    <code>
+      <pre>
+&lt;lx-tile-group title=&quot;Empty tile group&quot;&gt;
+      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;editable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
+               subtitle=&quot;editable&quot;/&gt;
+      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;deletable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
+               subtitle=&quot;deletable&quot;/&gt;
+      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;both&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
+               subtitle=&quot;both&quot;/&gt;
+      &lt;lx-tile title=&quot;bottomText tile&quot; @click=&quot;onClick&quot;
+               bottomText=&quot;Footer text&quot;/&gt;
+      &lt;lxTile type=&quot;create&quot; title=&quot;Create tile&quot;&gt;&lt;/lxTile&gt;
+&lt;/lx-tile-group&gt;
+      </pre>
+    </code>
   </div>
 </template>
 

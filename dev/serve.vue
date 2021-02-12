@@ -19,15 +19,7 @@
     </lx-side-nav>
 
     <div class="main-content">
-      <div class="w3-container">
-        <h1>My Page</h1>
-      </div>
-
-
-      <div class="w3-container">
         <router-view/>
-      </div>
-
     </div>
 
   </div>
@@ -45,25 +37,12 @@ export default Vue.extend({
   data() {
     return ({
       sidebar: true,
-      // expanded: [],
     })
   },
   methods: {
     onSidebarToggleClick() {
       this.sidebar = !this.sidebar
     },
-    // onExpandableClick(item) {
-    //   const find = this.expanded.indexOf(item)
-    //   if (find >= 0) {
-    //     this.expanded.splice(find, 1)
-    //   } else {
-    //     this.expanded.push(item)
-    //   }
-    // },
-    // isExpanded(item) {
-    //   const find = this.expanded.indexOf(item)
-    //   return find !== -1
-    // }
   },
   computed: {
     sidebasClass() {
@@ -79,6 +58,7 @@ export default Vue.extend({
 .main-content {
   margin-left: 0;
   transition: all linear 0.4s;
+  padding: 0 2rem;
 }
 
 .sidebar.sidebar__opened + .main-content {

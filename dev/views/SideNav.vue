@@ -1,41 +1,38 @@
 <template>
   <div>
-    <lx-side-nav v-model="active">
-      <template v-for="route in $router.options.routes">
-        <lx-side-nav-item :to="route.path">
-          <template #icon>{{ route.name.substr(0, 1) }}</template>
-          {{ route.name }}
-        </lx-side-nav-item>
-      </template>
-    </lx-side-nav>
+    <h1>{{ $route.name }}</h1>
+    <h3>Usage</h3>
+    <code>
+      <pre>
+    &lt;lx-side-nav&gt;
+      &lt;lx-side-nav-menu title=&quot;Demo&quot;&gt;
+      &lt;lx-side-nav-item&gt;Link 01&lt;/lx-side-nav-item&gt;
+      &lt;lx-side-nav-item-drop-down title=&quot;Drop Down Link&quot;&gt;
+        &lt;lx-side-nav-item&gt;Link 001&lt;/lx-side-nav-item&gt;
+        &lt;lx-side-nav-item&gt;Link 002&lt;/lx-side-nav-item&gt;
+        &lt;lx-side-nav-item&gt;Link 003&lt;/lx-side-nav-item&gt;
+      &lt;/lx-side-nav-item-drop-down&gt;
+      &lt;lx-side-nav-item&gt;Link 03&lt;/lx-side-nav-item&gt;
+      &lt;/lx-side-nav-menu&gt;
+    &lt;/lx-side-nav&gt;
+        </pre>
+    </code>
 
-    <button class="btn bordered rounded error toggle-btn" @click="toggleMenu">Toggle</button>
+
   </div>
 </template>
 
 <script>
-import {lxSideNav, lxSideNavItem} from "@/entry";
 
 export default {
   name: "SideNav",
-  components: {lxSideNavItem, lxSideNav},
   data() {
-    return ({
-      active: false
-    });
+    return ({});
   },
-  methods: {
-    toggleMenu: function () {
-      this.active = !this.active
-    }
-  }
+  methods: {}
 }
 </script>
 
 <style scoped lang="scss">
-.toggle-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
+
 </style>
