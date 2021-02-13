@@ -2,19 +2,18 @@
   padding: 1rem 0;
   font-weight: 500;
   font-size: 1rem;
-  color: #fff;
-  background-color: $lx-color-dark;
+  //color: #fff;
+  color: var(--color-light);
+  //background-color: $lx-color-dark;
+  background-color: var(--color-dark);
   position: relative;
   //transition: 5s;
 
   .navigation-container {
-    //width: $lx-config-container-size;
-    //margin: 0 auto;
     margin: 0 1rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    //transition: 5s;
   }
 
   .logo {
@@ -28,7 +27,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    //transition: 5s;
 
     .nav, .nav-right {
       list-style: none;
@@ -43,13 +41,6 @@
         &.dropdown-item {
           position: relative;
 
-          //&:last-child {
-          //  .dropdown-menu {
-          //    right: 0;
-          //    left: auto;
-          //  }
-          //}
-
           .item-title {
             display: flex;
             flex-wrap: nowrap;
@@ -57,36 +48,31 @@
             align-items: center;
             cursor: pointer;
 
-            & > div {
-              //height: 100%;
-            }
-
-            //& > svg {
-            //  width: .7rem;
-            //  margin-left: .6rem;
-            //}
           }
 
           .dropdown-menu {
             width: auto;
             display: none;
             position: absolute;
-            background-color: $lx-color-dark;
+            background-color: var(--color-dark);
             list-style: none;
             left: 0;
             top: 100%;
             margin: 1.1rem 0 0;
             box-sizing: border-box;
-            border: 1px solid $lx-color-dark-lite;
+            //border: 1px solid $lx-color-dark-lite;
+            border: 1px solid var(--color-dark-rgba-400);
             padding: 0;
             z-index: 1001;
 
             li {
               padding: 0;
-              border-bottom: 1px solid $lx-color-dark-lite;
+              //border-bottom: 1px solid $lx-color-dark-lite;
+              border-bottom: 1px solid var(--color-dark-rgba-400);
 
               &:hover {
-                background-color: rgba($lx-color-dark-lite, .2);
+                //background-color: rgba($lx-color-dark-lite, .2);
+                background-color: var(--color-dark-rgba-400);
               }
 
               a {
@@ -94,7 +80,8 @@
                 padding: .4rem .6rem;
 
                 &:hover {
-                  color: $lx-color-inactive-light;
+                  //color: $lx-color-inactive-light;
+                  color: var(--color-light);
                 }
               }
             }
@@ -110,25 +97,30 @@
         a {
           transition: all .3s ease 0s;
           text-decoration: none;
-          color: $lx-color-inactive-light;
+          //color: $lx-color-inactive-light;
+          color: var(--color-light);
           font-size: 1.1rem;
 
           & > * {
-            color: $lx-color-inactive-light;
+            //color: $lx-color-inactive-light;
+            color: var(--color-light);
           }
 
           .btn {
             &:hover {
-              background-color: rgba($lx-color-inactive, .3);
+              //background-color: rgba($lx-color-inactive, .3);
+              background-color: var(--color-light);
             }
 
             &:active {
-              background-color: rgba($lx-color-inactive, .8);
+              //background-color: rgba($lx-color-inactive, .8);
+              background-color: var(--color-light);
             }
           }
 
           &:hover {
-            color: $lx-color-info;
+            //color: $lx-color-info;
+            color: var(--color-info);
           }
         }
       }
@@ -149,7 +141,8 @@
 
   .toggle {
     display: none;
-    color: $lx-color-inactive-light;
+    //color: $lx-color-inactive-light;
+    color: var(--color-light);
     position: relative;
     cursor: pointer;
   }
@@ -195,10 +188,12 @@
               display: block;
               padding: 0;
               text-align: center;
-              border-top: 1px solid rgba(255, 255, 255, .05);
+              //border-top: 1px solid rgba(255, 255, 255, .05);
+              border-top: 1px solid var(--color-dark-rgba-400);
 
               &:hover {
-                background-color: rgba(255, 255, 255, .1);
+                //background-color: rgba(255, 255, 255, .1);
+                background-color: var(--color-dark-rgba-400);
               }
 
               a {

@@ -1,8 +1,11 @@
 <template>
-  <div class="colors">
-    <div v-for="color in colors" :class="color.cssClass" class="item" :ref="color.cssClass">
-      <div class="css-name" @click="onCopyToClipboard(color.cssClass)">.{{ color.cssClass }}</div>
-      <div class="css-hex" @click="onCopyToClipboard(color.hex)">{{ color.hex }}</div>
+  <div>
+    <h1>Colors</h1>
+    <div class="colors">
+      <div v-for="color in colors" :class="color.cssClass" class="item" :ref="color.cssClass">
+        <div class="css-name" @click="onCopyToClipboard(color.cssClass)">.{{ color.cssClass }}</div>
+        <div class="css-hex" @click="onCopyToClipboard(color.hex)">{{ color.hex }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,7 +68,7 @@ export default {
     })
   },
   mounted() {
-    this.colors.map((color,idx)=>{
+    this.colors.map((color, idx) => {
       let rgb = getComputedStyle(this.$refs[color.cssClass][0]).getPropertyValue('background-color')
       this.colors[idx].hex = this.rgbToHex(rgb)
       console.log()
@@ -79,7 +82,7 @@ export default {
     rgbToHex(rgb) {
       var rgbRegex = /^rgb\(\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*,\s*(-?\d+)(%?)\s*\)$/;
       var result, r, g, b, hex = "";
-      if ( (result = rgbRegex.exec(rgb)) ) {
+      if ((result = rgbRegex.exec(rgb))) {
         r = this.componentFromStr(result[1], result[2]);
         g = this.componentFromStr(result[3], result[4]);
         b = this.componentFromStr(result[5], result[6]);
