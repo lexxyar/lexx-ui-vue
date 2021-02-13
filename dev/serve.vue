@@ -62,7 +62,7 @@ export default Vue.extend({
 }
 
 .sidebar.sidebar__opened + .main-content {
-  margin-left: 25%;
+  //margin-left: 25%;
 }
 
 </style>
