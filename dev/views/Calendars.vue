@@ -1,10 +1,13 @@
 <template>
   <div>
-    <h2>Calendar</h2>
-    <template v-for="date in dates">
-      <lx-calendar v-model="date.value" :display-mode="date.mode" class="m-1"/>
-      <span>{{ date.value }}</span>
-    </template>
+    <h1>Calendar</h1>
+    <lx-calendar v-model="myDate" display-mode="days" class="m-1"/>
+    <span>{{ dateFormat() }}</span>
+    <code>
+      <pre>
+&lt;lx-calendar v-model=&quot;myDate&quot; display-mode=&quot;days&quot; class=&quot;m-1&quot;/&gt;
+      </pre>
+    </code>
   </div>
 </template>
 
@@ -16,13 +19,13 @@ export default {
   components: {LxCalendar},
   data() {
     return ({
-      dates: [
-        {value: new Date(2020, 11, 12), mode: 'months'},
-        {value: new Date(2020, 10, 11), mode: 'days'},
-        {value: new Date(2020, 5, 6), mode:'years'},
-        // {value: new Date(2020, 6, 7)},
-      ]
+      myDate: new Date(),
     })
+  },
+  methods:{
+    dateFormat(){
+      return new Intl.DateTimeFormat().format(this.myDate)
+    }
   }
 }
 </script>

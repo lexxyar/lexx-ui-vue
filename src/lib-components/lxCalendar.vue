@@ -28,19 +28,19 @@
       </template>
       <template v-if="mode==='months'">
         <div class="header">
-          <!--        <a href="#" class="left" @click="changeMonth(-1)">&lt;</a>-->
-          <span></span>
+                  <a href="#" class="left" @click="changePeriod(-1)">&lt;</a>
+<!--          <span></span>-->
           <a href="#" class="period" @click="nextMode()">
             {{ year }}
           </a>
-          <!--        <a href="#" class="right" @click="changeMonth(1)">&gt;</a>-->
-          <span></span>
+                  <a href="#" class="right" @click="changePeriod(1)">&gt;</a>
+<!--          <span></span>-->
         </div>
         <div class="body">
           <template v-for="quart in monthsName">
             <div class="quart">
               <template v-for="mon in quart">
-                <div class="month" @click="onMonthSelection(mon.index)">{{ mon.name }}</div>
+                <div class="month" @click="onMonthSelection(mon.index)" :class="getMonCss(year, mon.index)">{{ mon.name }}</div>
               </template>
             </div>
           </template>
@@ -49,7 +49,11 @@
       <template v-if="mode==='years'">
         <div class="header">
           <a href="#" class="left" @click="changePeriod(-9)">&lt;</a>
-          <span></span>
+          <!--          <span></span>-->
+          <a href="#" class="period" @click="nextMode()">
+            {{ year }}
+          </a>
+          <!--          <span></span>-->
           <a href="#" class="right" @click="changePeriod(9)">&gt;</a>
         </div>
         <div class="body">
@@ -132,6 +136,10 @@ export default {
     daysInMonth() {
       return new Date(this.year, this.month + 1, 0).getDate()
     },
+    // changeYear(val){
+    //   if (this.mode === 'days')
+    //     d.setMonth(d.getMonth() + val)
+    // },
     changePeriod(val) {
       let d = this.dateValue;
       if (this.mode === 'days')
@@ -222,7 +230,21 @@ export default {
           && day.date?.getDate() === this.value.getDate()) {
         css.push('selected')
       }
+      return css.join(' ')
+    },
+    getMonCss(year, monIndex) {
+      const css = []
 
+      const today = new Date()
+      if (year === today.getFullYear()
+          && monIndex === today.getMonth()) {
+        css.push('today')
+      }
+
+      if (year === this.value.getFullYear()
+          && monIndex === this.value.getMonth()) {
+        css.push('selected')
+      }
       return css.join(' ')
     },
     nextMode() {
