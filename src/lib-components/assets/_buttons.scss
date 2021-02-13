@@ -2,31 +2,40 @@
   padding: .5rem 1rem;
   background: none;
   font-size: 1.0rem;
-  border: 1px solid $lx-color-active;
+  //border: 1px solid $lx-color-active;
+  border: 2px solid var(--color-secondary);
   border-radius: 3px;
   outline: none;
   cursor: pointer;
+  box-sizing: border-box;
 
   &.dark {
-    color: $lx-color-inactive-light;
+    //color: $lx-color-inactive-light;
+    color: var(--color-light);
   }
 
   &:hover {
-    background-color: rgba(0, 0, 0, .05);
+    //background-color: rgba(0, 0, 0, .05);
+    background-color: var(--color-dark-rgba-300);
   }
 
   &:active {
-    background-color: rgba(0, 0, 0, .1);
+    //background-color: rgba(0, 0, 0, .1);
+    background-color: var(--color-dark-rgba-100);
   }
 
-  @each $name, $color in $lx-color-names {
+  //@each $name, $color in $lx-color-names {
+  @each $name, $color in $theme-colors {
+
     &.#{$name} {
       &:hover {
-        background-color: rgba($color, .3);
+        //background-color: rgba($color, .3);
+        background-color: var(--color-#{$name}-rgba-400);
       }
 
       &:active {
-        background-color: rgba($color, .6);
+        //background-color: rgba($color, .6);
+        background-color: var(--color-#{$name}-rgba-600);
       }
     }
   }

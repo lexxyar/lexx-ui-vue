@@ -7,7 +7,9 @@
 /*
 @import 'typography';
 @import 'grids';
+*/
 @import 'buttons';
+/*
 @import 'inputs';
 @import 'modalWindow';
 @import 'tables';
@@ -15,7 +17,9 @@
 @import 'tiles';
 /*
 @import 'navbars';
+*/
 @import 'gauge';
+/*
 @import 'switches';
 @import 'checkboxes';
 @import 'searchHelps';
@@ -38,8 +42,6 @@
     @for $i from 1 through 9 {
       --color-#{$name}-rgba-#{$i * 100}: #{toRGBA($color, $i / 10)};
     }
-
-
   }
 }
 
