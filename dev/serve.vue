@@ -58,11 +58,11 @@ export default Vue.extend({
 .main-content {
   margin-left: 0;
   transition: all linear 0.4s;
-  padding: 0 2rem;
+  //padding: 0 2rem;
 }
 
 .sidebar.sidebar__opened + .main-content {
-  //margin-left: 25%;
+  margin-left: 20%;
 }
 
 </style>
