@@ -1,7 +1,24 @@
+$card-border-color: var(--color-secondary);
+
 .card {
-  border: 1px solid $lx-color-active;
+  //border: 1px solid $lx-color-active;
+  border: 1px solid $card-border-color;
   border-radius: $lx-config-border-radius;
   display: block;
-  padding: .6rem;
+  //padding: .6rem;
   margin: .2rem;
+
+  .card-header {
+    margin: 0;
+    padding: 1rem .6rem;
+    border-bottom: 1px solid $card-border-color;
+    background-color: var(--color-dark-rgba-100);
+  }
+  .card-content{
+    padding: .6rem;
+  }
+  .card-footer{
+    border-top: 1px solid $card-border-color;
+    padding: .6rem;
+  }
 }

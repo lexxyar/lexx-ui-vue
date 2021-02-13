@@ -1,20 +1,33 @@
 <template>
   <div>
+    <h1>Cards</h1>
     <lx-card style="width: 300px;">
       <template #header>
         <h3>Card header</h3>
       </template>
-      Card content
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quisquam.
       <template #footer>
-        Card footer
+        <small>
+          Card footer
+        </small>
       </template>
     </lx-card>
 
-    <pre>
-            <code class="language-js">
-
-            </code>
-        </pre>
+    <code>
+      <pre>
+&lt;lx-card style=&quot;width: 300px;&quot;&gt;
+  &lt;template #header&gt;
+    &lt;h3&gt;Card header&lt;/h3&gt;
+  &lt;/template&gt;
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quisquam.
+  &lt;template #footer&gt;
+    &lt;small&gt;
+      Card footer
+    &lt;/small&gt;
+  &lt;/template&gt;
+&lt;/lx-card&gt;
+      </pre>
+    </code>
 
   </div>
 </template>
