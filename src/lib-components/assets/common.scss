@@ -3,6 +3,7 @@
 @import 'config';
 @import 'colors';
 @import 'utils/helpers';
+@import 'utils/mixins';
 @import 'typography';
 @import 'grids';
 @import 'buttons';
@@ -28,7 +29,6 @@
 @import 'calendars';
 
 
-
 :root {
   @each $name, $color in $theme-colors {
     --color-#{$name}: #{$color};
@@ -38,6 +38,7 @@
       --color-#{$name}-rgba-#{$i * 100}: #{toRGBA($color, $i / 10)};
     }
   }
+  --sidenav-size: #{$lx-config-sidenav-width};
 }
 
 * {

@@ -1,26 +1,116 @@
+$toggle-button-size: 1.5rem;
+
 .navbar {
-  padding: 1rem 0;
+  padding: $lx-config-nav-padding-y 0;
   font-weight: 500;
-  font-size: 1rem;
-  //color: #fff;
-  color: var(--color-light);
-  //background-color: $lx-color-dark;
-  background-color: var(--color-dark);
+  font-size: $lx-config-nav-font-size;
   position: relative;
-  //transition: 5s;
+  z-index: $lx-config-nav-zindex;
+  height: $lx-config-nav-size;
+  max-height: $lx-config-nav-size;
+  min-height: $lx-config-nav-size;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  box-shadow: 0 1px 2px var(--color-dark);
+
+
+  &.with-sidebar-left {
+    margin-left: $lx-config-sidenav-width;
+  }
 
   .navigation-container {
-    margin: 0 1rem;
+    margin: 0 $lx-config-main-margin;
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .logo {
-    cursor: pointer;
+  .brand {
+    //cursor: pointer;
     white-space: nowrap;
     text-transform: uppercase;
     font-size: 1.2rem;
+    min-width: var(--sidenav-size);
+    padding-right: $lx-config-main-margin;
+    position: relative;
+
+    .toggle-button {
+      position: absolute;
+      right: $lx-config-main-margin;
+      top: 0;
+    }
+  }
+
+  .toggle-button {
+    width: $toggle-button-size;
+    height: $toggle-button-size;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      .hamburger {
+        background-color: var(--color-info);
+      }
+    }
+
+    .hamburger {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      font-size: 0;
+      border: none;
+      background-color: var(--color-light);
+      cursor: pointer;
+      margin-top: .7rem;
+      transition: all .3s ease 0s;
+
+      &:before, &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        content: '';
+        height: 2px;
+        background-color: inherit;
+        margin-top: -.4rem;
+      }
+
+      &:after {
+        top: unset;
+        bottom: 0;
+        margin-bottom: -.4rem;
+      }
+    }
+  }
+
+  &.toggled {
+    .toggle-button {
+      .hamburger {
+        background-color: transparent;
+
+        &:before, &:after {
+          background-color: var(--color-light);
+          transform-origin: center center;
+          margin: 0;
+        }
+
+        $hamburger-degrees: 45deg;
+
+        &:before {
+          transform: rotateZ($hamburger-degrees);
+        }
+
+        &:after {
+          transform: rotateZ(-$hamburger-degrees);
+        }
+      }
+    }
+
+    .brand{
+      margin-left: calc(var(--sidenav-size) * -1 + #{$toggle-button-size + $lx-config-main-margin});
+    }
   }
 
   nav {
@@ -99,7 +189,8 @@
           text-decoration: none;
           //color: $lx-color-inactive-light;
           color: var(--color-light);
-          font-size: 1.1rem;
+          //font-size: 1.1rem;
+          font-size: $lx-config-nav-font-size;
 
           & > * {
             //color: $lx-color-inactive-light;
@@ -128,6 +219,7 @@
 
     .nav-right {
       justify-content: flex-end;
+
       &.dropdown-item {
         &:last-child {
           .dropdown-menu {
@@ -148,79 +240,79 @@
   }
 }
 
-@media (max-width: $lx-config-min-screen-size) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-
-    nav {
-      display: none;
-    }
-
-    &.toggled {
-      height: 100vh;
-
-      .navigation-container {
-        margin: 0;
-        width: 100%;
-
-
-        display: block;
-        position: relative;
-
-        nav {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-
-          .nav {
-            display: block;
-            margin-top: 2.6rem;
-
-            li {
-              display: block;
-              padding: 0;
-              text-align: center;
-              //border-top: 1px solid rgba(255, 255, 255, .05);
-              border-top: 1px solid var(--color-dark-rgba-400);
-
-              &:hover {
-                //background-color: rgba(255, 255, 255, .1);
-                background-color: var(--color-dark-rgba-400);
-              }
-
-              a {
-                display: block;
-                padding: .8rem .6rem;
-
-                &:hover {
-                  color: inherit;
-                }
-              }
-            }
-          }
-
-          .nav-right {
-            & > * {
-              display: block;
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-
-    .toggle {
-      display: block;
-      width: 24px;
-      margin-right: .8rem;
-    }
-  }
-}
+//@media (max-width: $lx-config-min-screen-size) {
+//  .navbar {
+//    display: flex;
+//    justify-content: space-between;
+//    padding: 1rem 0;
+//
+//    nav {
+//      display: none;
+//    }
+//
+//    &.toggled {
+//      height: 100vh;
+//
+//      .navigation-container {
+//        margin: 0;
+//        width: 100%;
+//
+//
+//        display: block;
+//        position: relative;
+//
+//        nav {
+//          position: absolute;
+//          left: 0;
+//          right: 0;
+//          bottom: 0;
+//          top: 0;
+//          width: 100%;
+//          display: flex;
+//          flex-direction: column;
+//          justify-content: space-between;
+//
+//          .nav {
+//            display: block;
+//            margin-top: 2.6rem;
+//
+//            li {
+//              display: block;
+//              padding: 0;
+//              text-align: center;
+//              //border-top: 1px solid rgba(255, 255, 255, .05);
+//              border-top: 1px solid var(--color-dark-rgba-400);
+//
+//              &:hover {
+//                //background-color: rgba(255, 255, 255, .1);
+//                background-color: var(--color-dark-rgba-400);
+//              }
+//
+//              a {
+//                display: block;
+//                padding: .8rem .6rem;
+//
+//                &:hover {
+//                  color: inherit;
+//                }
+//              }
+//            }
+//          }
+//
+//          .nav-right {
+//            & > * {
+//              display: block;
+//              text-align: center;
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .toggle {
+//      display: block;
+//      width: 24px;
+//      margin-right: .8rem;
+//    }
+//  }
+//}
