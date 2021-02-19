@@ -23,11 +23,24 @@ h1, h2, h3, h4, h5, h6 {
 
 $side-list: ('':'', 't':'-top', 'b':'-bottom', 'l':'-left', 'r':'-right');
 $spacers: ('m':'margin', 'p':'padding');
+$spaces: 0, .3rem, .5rem, .8rem, 1rem, 1.4rem;
+$axis: 'x', 'y';
 @each $short, $spacer in $spacers {
-  @each $name, $suffix in $side-list {
-    @for $i from 0 through 5 {
-      .#{$short}#{$name}-#{$i} {
-        #{$spacer}#{$suffix}: #{$i}rem;
+  @for $i from 1 through length($spaces) {
+    @each $name, $suffix in $side-list {
+      .#{$short}#{$name}-#{$i - 1} {
+        #{$spacer}#{$suffix}: #{nth($spaces, $i)};
+      }
+    }
+    @each $xy in $axis {
+      .#{$short}#{$xy}-#{$i - 1} {
+        @if $xy == 'x' {
+          #{$spacer}-left: #{nth($spaces, $i)};
+          #{$spacer}-right: #{nth($spaces, $i)};
+        } @else {
+          #{$spacer}-top: #{nth($spaces, $i)};
+          #{$spacer}-bottom: #{nth($spaces, $i)};
+        }
       }
     }
   }

@@ -5,7 +5,7 @@
     <side-nav-component :expanded="sidebarState"/>
 
 
-    <div class="main-content">
+    <div class="main-content px-3 pt-3">
       <router-view/>
     </div>
 
@@ -45,8 +45,8 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .main-content {
-  margin-left: 0;
-  transition: all linear 0.4s;
+  //margin-left: 0;
+  //transition: all linear 0.4s;
   //padding: 0 2rem;
 }
 

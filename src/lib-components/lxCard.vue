@@ -1,12 +1,12 @@
 <template>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header" v-if="hasHeaderSlot()">
       <slot name="header"></slot>
     </div>
     <div class="card-content">
       <slot></slot>
     </div>
-    <div class="card-footer">
+    <div class="card-footer" v-if="hasFooterSlot()">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -14,7 +14,15 @@
 
 <script>
 export default {
-  name: "lxCard"
+  name: "lxCard",
+  methods: {
+    hasHeaderSlot() {
+      return !!this.$slots.header
+    },
+    hasFooterSlot() {
+      return !!this.$slots.Footer
+    },
+  }
 }
 </script>
 

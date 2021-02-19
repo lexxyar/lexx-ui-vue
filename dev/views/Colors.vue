@@ -29,41 +29,31 @@ export default {
           hex: '#000000'
         },
         {
-          cssClass: 'error',
-          hex: '#000000'
-        },
-        {
           cssClass: 'info',
           hex: '#000000'
         },
-        // {
-        //   cssClass: 'active',
-        //   hex: '#9e9e9e'
-        // },
-        // {
-        //   cssClass: 'inactive',
-        //   hex: '#d1d1d1'
-        // },
-        // {
-        //   cssClass: 'inactive-light',
-        //   hex: '#f5f8ff'
-        // },
         {
           cssClass: 'warning',
           hex: '#000000'
         },
         {
-          cssClass: 'dark',
+          cssClass: 'danger',
+          hex: '#000000'
+        },
+
+        {
+          cssClass: 'alt',
           hex: '#000000'
         },
         {
           cssClass: 'light',
           hex: '#000000'
         },
-        // {
-        //   cssClass: 'dark-lite',
-        //   hex: '#555555'
-        // },
+        {
+          cssClass: 'dark',
+          hex: '#000000'
+        },
+
       ]
     })
   },

@@ -1,81 +1,193 @@
+@use "sass:map";
+
 .btn {
-  padding: .5rem 1rem;
-  background: none;
-  font-size: 1.0rem;
-  //border: 1px solid $lx-color-active;
-  border: 2px solid var(--color-secondary);
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  box-sizing: border-box;
+  font-size: .8rem;
+  font-weight: 600;
+  outline: none !important;
+  border-style: solid;
+  border-width: 1px;
+  padding: .4rem .8rem;
+  color: var(--color-dark);
+  border-radius: $lx-config-border-radius;
+  line-height: 1.1rem;
+  display: inline-block;
+  border-color: darken(map.get($theme-colors, "light"), 15);
+  background-color: map.get($theme-colors, "light");
 
-  &.dark {
-    //color: $lx-color-inactive-light;
-    color: var(--color-light);
+  &:hover, &.active {
+    &:not(:disabled):not(.disabled) {
+      background-color: darken(map.get($theme-colors, "light"), 10);
+      border-color: darken(map.get($theme-colors, "light"), 10);
+    }
   }
 
-  &:hover {
-    //background-color: rgba(0, 0, 0, .05);
-    background-color: var(--color-dark-rgba-300);
-  }
-
-  &:active {
-    //background-color: rgba(0, 0, 0, .1);
-    background-color: var(--color-dark-rgba-100);
-  }
-
-  //@each $name, $color in $lx-color-names {
   @each $name, $color in $theme-colors {
+    $btn-color: var(--color-#{$name});
+    &.btn-#{$name} {
+      border-color: $btn-color;
+      background-color: $btn-color;
+      color: var(--color-light);
 
-    &.#{$name} {
-      &:hover {
-        //background-color: rgba($color, .3);
-        background-color: var(--color-#{$name}-rgba-400);
+      @if $name == 'light' {
+        border-color: darken($color, 15);
       }
 
-      &:active {
-        //background-color: rgba($color, .6);
-        background-color: var(--color-#{$name}-rgba-600);
+      &:hover, &.active {
+        &:not(:disabled):not(.disabled) {
+          background-color: darken($color, 10);
+          border-color: darken($color, 10);
+        }
+      }
+
+      &.btn-outline {
+        background-color: transparent;
+        color: var(--color-#{$name});
+        @if $name == 'light' {
+          color: var(--color-dark);
+        }
+
+        &:hover, &.active {
+          &:not(:disabled):not(.disabled) {
+            background-color: $color;
+            border-color: $color;
+            color: var(--color-light);
+
+            @if $name == 'light' {
+              color: var(--color-dark);
+              background-color: darken($color, 5);
+            }
+          }
+        }
       }
     }
   }
 
+  &.btn-warning, &.btn-light {
+    color: var(--color-dark);
+  }
 
-  @each $name, $color in $lx-color-names {
-    &.#{$name}.bordered {
-      background: none;
-      border: 2px solid $color;
-      color: initial;
+  &.btn-link {
+    color: var(--color-primary);
+    border: none;
+    background-color: transparent;
 
-      &:hover {
-        background-color: rgba($color, .3);
-      }
-
-      &:active {
-        background-color: rgba($color, .6);
+    &:hover, &.active {
+      &:not(:disabled):not(.disabled) {
+        text-decoration: underline;
+        background-color: transparent;
+        color: darken(map.get($theme-colors, "primary"), 15);
       }
     }
   }
 
-  &.rounded {
-    border-radius: 2rem;
+  &:disabled, &.disabled {
+    opacity: .65;
   }
 
-  &.iconed {
-    //border-radius: 50%;
-    //margin: 0;
-    //padding: 0;
-    //width: 2.3rem;
-    //height: 2.2rem;
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
 
-    //& > * {
-    //  width: 1rem;
-    //  font-size: 1rem;
-    //  line-height: 2.2rem;
-    //}
+  &.btn-lg {
+    padding: .5rem 1rem;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  &.btn-sm {
+    padding: .25rem .5rem;
+    line-height: 1rem;
+  }
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  &.btn-pill {
+    border-radius: 50px;
   }
 }
 
+
+//.btn {
+//  padding: .5rem 1rem;
+//  background: none;
+//  font-size: 1.0rem;
+//  //border: 1px solid $lx-color-active;
+//  border: 2px solid var(--color-secondary);
+//  border-radius: 3px;
+//  outline: none;
+//  cursor: pointer;
+//  box-sizing: border-box;
+//
+//  &.dark {
+//    //color: $lx-color-inactive-light;
+//    color: var(--color-light);
+//  }
+//
+//  &:hover {
+//    //background-color: rgba(0, 0, 0, .05);
+//    background-color: var(--color-dark-rgba-300);
+//  }
+//
+//  &:active {
+//    //background-color: rgba(0, 0, 0, .1);
+//    background-color: var(--color-dark-rgba-100);
+//  }
+//
+//  //@each $name, $color in $lx-color-names {
+//  @each $name, $color in $theme-colors {
+//
+//    &.#{$name} {
+//      &:hover {
+//        //background-color: rgba($color, .3);
+//        background-color: var(--color-#{$name}-rgba-400);
+//      }
+//
+//      &:active {
+//        //background-color: rgba($color, .6);
+//        background-color: var(--color-#{$name}-rgba-600);
+//      }
+//    }
+//  }
+//
+//
+//  @each $name, $color in $lx-color-names {
+//    &.#{$name}.bordered {
+//      background: none;
+//      border: 2px solid $color;
+//      color: initial;
+//
+//      &:hover {
+//        background-color: rgba($color, .3);
+//      }
+//
+//      &:active {
+//        background-color: rgba($color, .6);
+//      }
+//    }
+//  }
+//
+//  &.rounded {
+//    border-radius: 2rem;
+//  }
+//
+//  &.iconed {
+//    //border-radius: 50%;
+//    //margin: 0;
+//    //padding: 0;
+//    //width: 2.3rem;
+//    //height: 2.2rem;
+//
+//    //& > * {
+//    //  width: 1rem;
+//    //  font-size: 1rem;
+//    //  line-height: 2.2rem;
+//    //}
+//  }
+//}
+//
 .button-group {
   .btn {
     &:first-child {

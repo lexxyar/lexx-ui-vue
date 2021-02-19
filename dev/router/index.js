@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import buttonRoutes from "./router-buttons";
+
 Vue.use(VueRouter)
 
-const routes = [
+let routes = [
     {
         path: '/',
         // path: '/sidenav',
@@ -33,8 +35,10 @@ const routes = [
     {
         path: '/buttons',
         name: 'Buttons',
-        component: () => import('../views/Buttons.vue')
+        component: () => import('../views/Buttons.vue'),
+        children: []
     },
+
     {
         path: '/inputs',
         name: 'Inputs',
@@ -71,6 +75,8 @@ const routes = [
         component: () => import('../views/Calendars.vue')
     },
 ]
+
+routes = routes.concat(buttonRoutes)
 
 const router = new VueRouter({
     mode: 'history',
