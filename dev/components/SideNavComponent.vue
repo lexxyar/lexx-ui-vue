@@ -1,6 +1,5 @@
 <template>
   <lx-side-nav :expanded="expanded">
-    <!--    <template #brand>Brand</template>-->
     <lx-side-nav-menu title="Router">
       <template v-for="route in $router.options.routes">
         <lx-side-nav-item :to="route.path">{{ route.name }}</lx-side-nav-item>

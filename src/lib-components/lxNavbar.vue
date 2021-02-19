@@ -60,7 +60,7 @@ export default {
     },
     getCss() {
       let css = []
-      css.push(this.sidebarExpandedSync ? 'toggled' : '')
+      css.push(this.sidebarExpandedSync ? '':'collapsed')
       return css.join(' ')
     }
   },

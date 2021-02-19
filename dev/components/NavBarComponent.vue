@@ -47,7 +47,6 @@ export default {
   },
   methods:{
     onToggle(e){
-      // console.log('Toggle nav', e)
       this.$emit('onToggle', e)
     }
   }

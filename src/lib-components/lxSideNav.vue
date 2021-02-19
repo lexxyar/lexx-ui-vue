@@ -55,11 +55,10 @@ export default {
   },
   data() {
     return ({
-      expandedSync: this.expandedSync ? this.expandedSync : true,
+      expandedSync: this.expanded,
     });
   },
   computed: {
-
     hasBrandSlot() {
       return !!this.$slots.brand
     }
@@ -77,7 +76,7 @@ export default {
     },
   },
   watch: {
-    expanded(oldVal, newVal) {
+    expanded(newVal) {
       this.expandedSync = newVal
     }
   }
