@@ -3,7 +3,7 @@
   //border: 1px solid $lx-color-inactive;
   border: 1px solid var(--color-light);
   border-radius: $lx-config-border-radius;
-  width: $lx-calendar-config-width;
+  width: $lx-config-calendar-width;
   //padding: $lx-calendar-config-padding;
 
   .calendar-container {
@@ -12,10 +12,10 @@
 
   .header {
     display: grid;
-    grid-template-columns: $lx-calendar-config-cell-day-width ($lx-calendar-config-cell-day-width * 5) $lx-calendar-config-cell-day-width;
+    grid-template-columns: $lx-config-calendar-cell-day-width ($lx-config-calendar-cell-day-width * 5) $lx-config-calendar-cell-day-width;
     //background-color: $lx-color-inactive;
     background-color: var(--color-light);
-    padding: .1rem $lx-calendar-config-padding;
+    padding: .1rem $lx-config-calendar-padding;
     line-height: 2rem;
 
     a {
@@ -43,16 +43,16 @@
   }
 
   .body {
-    padding: $lx-calendar-config-padding;
+    padding: $lx-config-calendar-padding;
 
     .week {
       display: grid;
-      grid-template-columns: repeat(7, $lx-calendar-config-cell-day-width);
+      grid-template-columns: repeat(7, $lx-config-calendar-cell-day-width);
 
 
       .day {
-        width: $lx-calendar-config-cell-day-width;
-        height: $lx-calendar-config-cell-day-width;
+        width: $lx-config-calendar-cell-day-width;
+        height: $lx-config-calendar-cell-day-width;
         display: flex;
         font-size: 1rem;
         justify-content: center;
@@ -105,7 +105,7 @@
 
     .quart {
       display: grid;
-      grid-template-columns: repeat(3, $lx-calendar-config-cell-month-width);
+      grid-template-columns: repeat(3, $lx-config-calendar-cell-month-width);
 
       .month {
         display: flex;
