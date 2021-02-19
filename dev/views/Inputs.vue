@@ -1,7 +1,8 @@
 <template>
   <div>
     <div>
-      <h2 class="mb-1"><a href="#simple_inputs">Inputs</a></h2>
+<!--      <h2 class="mb-1"><a href="#simple_inputs">Inputs</a></h2>-->
+      <h1>Inputs</h1>
       <div class="row">
         <div class="col-8">
           <h4 class="mb-1 mt-1"><a href="#">Simple input</a></h4>

@@ -2,13 +2,15 @@ $input-padding: .5rem 1rem;
 input {
   font-size: 1rem;
   outline: none;
-  border: 1px solid $lx-color-active;
+  //border: 1px solid $lx-color-active;
+  border: 1px solid var(--color-dark-rgba-300);
   border-radius: $lx-config-border-radius;
   padding: $input-padding;
   width: inherit;
 
   &::placeholder {
-    color: $lx-color-inactive;
+    //color: $lx-color-inactive;
+    color: var(--color-dark-rgba-300);
   }
 
 }
@@ -19,8 +21,10 @@ input {
 
   &.readonly {
     input, .prepend, .append {
-      background-color: $lx-color-inactive-light;
-      border-color: $lx-color-inactive !important;
+      //background-color: $lx-color-inactive-light;
+      background-color: var(--color-dark-rgba-300);
+      //border-color: $lx-color-inactive !important;
+      border-color: var(--color-dark-rgba-300) !important;
     }
   }
 
@@ -45,7 +49,8 @@ input {
     }
 
     &.has-text {
-      border-bottom: 1px dotted $lx-color-inactive;
+      //border-bottom: 1px dotted $lx-color-inactive;
+      border-bottom: 1px dotted var(--color-dark-rgba-300);
     }
   }
 
@@ -60,7 +65,8 @@ input {
     }
 
     .input-extention {
-      border: 1px solid $lx-color-active;
+      //border: 1px solid $lx-color-active;
+      border: 1px solid var(--color-dark-rgba-300);
       border-radius: $lx-config-border-radius;
       padding: $input-padding;
       //min-width: 1.6rem;

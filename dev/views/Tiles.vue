@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Tiles</h1>
     <lx-tile-group title="Guns">
       <template v-for="tile in tiles">
         <lxTile v-bind="tile" @click="onClick"></lxTile>
