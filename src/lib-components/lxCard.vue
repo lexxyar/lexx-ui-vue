@@ -20,7 +20,7 @@ export default {
       return !!this.$slots.header
     },
     hasFooterSlot() {
-      return !!this.$slots.Footer
+      return !!this.$slots.footer
     },
   }
 }

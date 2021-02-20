@@ -48,6 +48,7 @@ export default Vue.extend({
   //margin-left: 0;
   //transition: all linear 0.4s;
   //padding: 0 2rem;
+  background-color: rgb(241, 244, 246);
 }
 
 .sidebar.sidebar__opened + .main-content {

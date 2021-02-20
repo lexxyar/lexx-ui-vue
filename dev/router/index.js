@@ -51,7 +51,7 @@ let routes = [
     {
         path: '/cards',
         name: 'Cards',
-        component: () => import('../views/Cards.vue')
+        component: () => import('../views/Cards/CardBasic.vue')
     },
     {
         path: '/grids',

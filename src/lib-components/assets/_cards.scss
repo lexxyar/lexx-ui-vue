@@ -1,24 +1,64 @@
-$card-border-color: var(--color-secondary);
+$card-border-color: lightgray;
 
 .card {
-  //border: 1px solid $lx-color-active;
-  border: 1px solid $card-border-color;
-  border-radius: $lx-config-border-radius;
   display: block;
-  //padding: .6rem;
   margin: .2rem;
+  box-shadow: 0 0.4rem 2.2rem rgb(4 9 20 / 3%),
+  0 0.9rem 1.4rem rgb(4 9 20 / 3%),
+  0 0.25rem 0.5rem rgb(4 9 20 / 5%),
+  0 0.13rem 0.2rem rgb(4 9 20 / 3%);
+  border-width: 0;
+  background-color: var(--color-light);
+  border-radius: $lx-config-border-radius;
+
+
+  @each $name, $color in $theme-colors {
+    &.bg-#{$name} {
+      color: var(--color-light);
+      background-color: transparent;
+
+      .card-header, .card-footer {
+        background-color: var(--color-#{$name}-rgba-800);
+
+      }
+
+      .card-header {
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+      }
+
+      .card-footer {
+        border-top: 1px solid transparent;
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+      }
+
+      .card-content {
+        background-color: var(--color-#{$name}-rgba-900);
+      }
+    }
+  }
 
   .card-header {
     margin: 0;
     padding: 1rem .6rem;
     border-bottom: 1px solid $card-border-color;
-    background-color: var(--color-dark-rgba-100);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 3.3rem;
   }
-  .card-content{
+
+  .card-content {
     padding: .6rem;
   }
-  .card-footer{
+
+  .card-footer {
     border-top: 1px solid $card-border-color;
     padding: .6rem;
+    height: 3.3rem;
+    display: flex;
   }
 }
