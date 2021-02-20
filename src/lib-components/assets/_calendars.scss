@@ -1,10 +1,8 @@
 .calendar {
-  box-sizing: border-box;
-  //border: 1px solid $lx-color-inactive;
-  border: 1px solid var(--color-light);
   border-radius: $lx-config-border-radius;
+  @include border-shadow;
   width: $lx-config-calendar-width;
-  //padding: $lx-calendar-config-padding;
+  background-color: var(--color-light);
 
   .calendar-container {
 
@@ -13,14 +11,13 @@
   .header {
     display: grid;
     grid-template-columns: $lx-config-calendar-cell-day-width ($lx-config-calendar-cell-day-width * 5) $lx-config-calendar-cell-day-width;
-    //background-color: $lx-color-inactive;
-    background-color: var(--color-light);
+    background-color: var(--color-secondary-rgba-100);
     padding: .1rem $lx-config-calendar-padding;
     line-height: 2rem;
 
     a {
       text-decoration: none;
-      color: $lx-color-dark;
+      color: var(--color-dark);
       font-weight: 600;
 
       &.left, &.right {
@@ -60,44 +57,32 @@
         cursor: pointer;
         transition: font-weight, background-color .2s ease-out;
 
-        &.day-header{
+        &.day-header {
           cursor: default;
         }
 
         &:hover:not(.day-header) {
           font-weight: 600;
-          //background-color: $lx-color-warning;
           background-color: var(--color-warning);
 
           &.weekend {
-            //background-color: $lx-color-warning;
             background-color: var(--color-warning);
           }
         }
 
         &.weekend {
-          //background-color: $lx-color-inactive;
-          background-color: var(--color-light);
+          background-color: var(--color-secondary-rgba-100);
 
           &.other-month {
-            //color: $lx-color-inactive-light;
             color: var(--color-light);
           }
         }
 
-        //&.today {
-        //  box-sizing: border-box;
-        //  //border: 1px solid $lx-color-error;
-        //  border: 1px solid var(--color-error);
-        //}
-
         &.other-month {
-          //color: $lx-color-inactive;
-          color: var(--color-light);
+          color: var(--color-secondary-rgba-500);
         }
 
-        &.selected{
-          //background-color: $lx-color-info;
+        &.selected {
           background-color: var(--color-info);
         }
       }

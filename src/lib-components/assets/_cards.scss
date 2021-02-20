@@ -3,10 +3,7 @@ $card-border-color: lightgray;
 .card {
   display: block;
   margin: .2rem;
-  box-shadow: 0 0.4rem 2.2rem rgb(4 9 20 / 3%),
-  0 0.9rem 1.4rem rgb(4 9 20 / 3%),
-  0 0.25rem 0.5rem rgb(4 9 20 / 5%),
-  0 0.13rem 0.2rem rgb(4 9 20 / 3%);
+  @include border-shadow;
   border-width: 0;
   background-color: var(--color-light);
   border-radius: $lx-config-border-radius;

@@ -28,19 +28,22 @@
       </template>
       <template v-if="mode==='months'">
         <div class="header">
-                  <a href="#" class="left" @click="changePeriod(-1)">&lt;</a>
-<!--          <span></span>-->
+          <a href="#" class="left" @click="changePeriod(-1)">&lt;</a>
+          <!--          <span></span>-->
           <a href="#" class="period" @click="nextMode()">
             {{ year }}
           </a>
-                  <a href="#" class="right" @click="changePeriod(1)">&gt;</a>
-<!--          <span></span>-->
+          <a href="#" class="right" @click="changePeriod(1)">&gt;</a>
+          <!--          <span></span>-->
         </div>
         <div class="body">
           <template v-for="quart in monthsName">
             <div class="quart">
               <template v-for="mon in quart">
-                <div class="month" @click="onMonthSelection(mon.index)" :class="getMonCss(year, mon.index)">{{ mon.name }}</div>
+                <div class="month" @click="onMonthSelection(mon.index)" :class="getMonCss(year, mon.index)">{{
+                    mon.name
+                  }}
+                </div>
               </template>
             </div>
           </template>
@@ -102,11 +105,10 @@ export default {
     for (let i = 1; i <= 8; i++) {
       let date = new Date(this.year, this.month, i)
       let dayOfWeek = date.getDay()
-      let day = {
+      this.daysName[dayOfWeek] = {
         dayOfWeek,
         name: date.toLocaleDateString(this.locale, {weekday: 'short'})
       }
-      this.daysName[dayOfWeek] = day
     }
 
     this.monthsName = []
@@ -144,8 +146,8 @@ export default {
       let d = this.dateValue;
       if (this.mode === 'days')
         d.setMonth(d.getMonth() + val)
-      else (this.mode === 'months')
-      d.setFullYear(d.getFullYear() + val)
+      else if (this.mode === 'months')
+        d.setFullYear(d.getFullYear() + val)
       this.dateValue = new Date(d)
       this.$emit('input', this.dateValue)
     },
