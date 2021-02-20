@@ -24,6 +24,10 @@
       <lx-side-nav-item-drop-down title="Layout">
         <lx-side-nav-item to="/grids">Grids</lx-side-nav-item>
       </lx-side-nav-item-drop-down>
+      <lx-side-nav-item-drop-down title="Tables">
+        <lx-side-nav-item to="/regular-table">Regular table</lx-side-nav-item>
+        <lx-side-nav-item to="/data-table">Data table</lx-side-nav-item>
+      </lx-side-nav-item-drop-down>
       <lx-side-nav-item-drop-down title="Buttons">
         <lx-side-nav-item to="/standard-buttons">Standard</lx-side-nav-item>
         <lx-side-nav-item to="/pill-buttons">Pills</lx-side-nav-item>
