@@ -106,7 +106,7 @@ export default {
     qStyle: {
       type: String,
       validator: function (value) {
-        return ['', 'success', 'error', 'info', 'warning'].indexOf(value) !== -1
+        return ['', 'success', 'danger', 'info', 'warning'].indexOf(value) !== -1
       },
       default: ''
     },

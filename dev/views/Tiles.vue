@@ -18,21 +18,19 @@
       <lxTile type="create" title="Create tile"></lxTile>
     </lx-tile-group>
 
-    <code>
-      <pre>
-&lt;lx-tile-group title=&quot;Empty tile group&quot;&gt;
-      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;editable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
-               subtitle=&quot;editable&quot;/&gt;
-      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;deletable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
-               subtitle=&quot;deletable&quot;/&gt;
-      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;both&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;
-               subtitle=&quot;both&quot;/&gt;
-      &lt;lx-tile title=&quot;bottomText tile&quot; @click=&quot;onClick&quot;
-               bottomText=&quot;Footer text&quot;/&gt;
-      &lt;lxTile type=&quot;create&quot; title=&quot;Create tile&quot;&gt;&lt;/lxTile&gt;
-&lt;/lx-tile-group&gt;
+    <pre>
+<code>&lt;lx-tile-group title=&quot;Empty tile group&quot;&gt;</code>
+<code>      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;editable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;</code>
+<code>               subtitle=&quot;editable&quot;/&gt;</code>
+<code>      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;deletable&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;</code>
+<code>               subtitle=&quot;deletable&quot;/&gt;</code>
+<code>      &lt;lx-tile title=&quot;Action tile&quot; mode=&quot;both&quot; @edit=&quot;onEditClick&quot; @delete=&quot;onDeleteClick&quot; @click=&quot;onClick&quot;</code>
+<code>               subtitle=&quot;both&quot;/&gt;</code>
+<code>      &lt;lx-tile title=&quot;bottomText tile&quot; @click=&quot;onClick&quot;</code>
+<code>               bottomText=&quot;Footer text&quot;/&gt;</code>
+<code>      &lt;lxTile type=&quot;create&quot; title=&quot;Create tile&quot;&gt;&lt;/lxTile&gt;</code>
+<code>&lt;/lx-tile-group&gt;</code>
       </pre>
-    </code>
   </div>
 </template>
 
@@ -47,7 +45,7 @@ export default {
   data() {
     return ({
       tiles: [
-        {scale: "9", quantity: 'mm', title: 'Handgun', subtitle: 'NATO', progress: -1, qStyle: 'error'},
+        {scale: "9", quantity: 'mm', title: 'Handgun', subtitle: 'NATO', progress: -1, qStyle: 'danger'},
         {scale: "7.62", quantity: 'mm', title: 'AK-47', subtitle: 'x 39mm', bottomText: 'Assault rifles'},
         {scale: "7.62", quantity: 'mm', title: 'Rifle', subtitle: 'x 54R', bottomText: 'Typical rifles'},
         {

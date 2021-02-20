@@ -33,6 +33,7 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
   flex-direction: column;
   cursor: pointer;
   transition: background-color .3s;
+  background-color: var(--color-light);
 
   &.type-create {
     //border: 2px dashed $lx-color-inactive;
@@ -45,6 +46,7 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
   &:hover {
     //background-color: rgba(3, 169, 244, .05);
     background-color: var(--color-primary-rgba-100);
+    transform: scale(1.05);
   }
 
   .header, .content, .footer {
@@ -151,7 +153,7 @@ $tile-content-height: $tile-size - $tile-header-height - $tile-footer-height - $
           padding-right: $tile-content-padding;
 
           &:hover {
-            color: var(--color-error);
+            color: var(--color-danger);
             //color: $lx-color-error;
           }
         }
