@@ -45,14 +45,14 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .main-content {
-  //margin-left: 0;
-  //transition: all linear 0.4s;
-  //padding: 0 2rem;
-  background-color: rgb(241, 244, 246);
+  margin-top: var(--navbar-size);
+}
+
+.sidebar {
+  top: var(--navbar-size);
 }
 
 .sidebar.sidebar__opened + .main-content {
-  //margin-left: 20%;
   margin-left: var(--sidenav-size);
 }
 

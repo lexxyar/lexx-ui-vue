@@ -40,6 +40,7 @@
     }
   }
   --sidenav-size: #{$lx-config-sidenav-width};
+  --navbar-size: #{$lx-config-nav-size};
 }
 
 * {
@@ -52,7 +53,8 @@ body {
   font-family: $lx-config-font-family;
   font-size: $lx-config-font-size;
   min-height: 100Vh;
-  color: map-get($theme-colors, "dark");
+  color: var(--color-dark);
+  background-color: rgb(241, 244, 246);
 }
 
 a, button {

@@ -48,9 +48,9 @@ $lx-gauge-height: 200px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column-reverse;
-    //border: 1px solid $lx-color-active;
     border: 1px solid var(--color-secondary);
     box-sizing: border-box;
+    background-color: var(--color-light);
 
     .gauge-bar {
       width: $lx-gauge-width;
@@ -63,7 +63,6 @@ $lx-gauge-height: 200px;
         left: 0;
         right: 0;
         text-align: center;
-        //text-shadow: 0 0 10px #fff;
       }
     }
 

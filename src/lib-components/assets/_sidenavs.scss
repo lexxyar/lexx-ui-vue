@@ -9,6 +9,7 @@ $sidenav-width: 20%;
   z-index: $lx-config-sidenav-zindex;
   overflow: visible;
   box-shadow: inset -1px 0 0 var(--color-dark-rgba-100);
+  background-color: var(--color-light);
 
   .sidebar-toggle {
     position: absolute;

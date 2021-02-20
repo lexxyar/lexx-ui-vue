@@ -17,40 +17,40 @@ export default {
     return ({
       colors: [
         {
-          cssClass: 'primary',
+          cssClass: 'bg-primary',
           hex: '#000000'
         },
         {
-          cssClass: 'secondary',
+          cssClass: 'bg-secondary',
           hex: '#000000'
         },
         {
-          cssClass: 'success',
+          cssClass: 'bg-success',
           hex: '#000000'
         },
         {
-          cssClass: 'info',
+          cssClass: 'bg-info',
           hex: '#000000'
         },
         {
-          cssClass: 'warning',
+          cssClass: 'bg-warning',
           hex: '#000000'
         },
         {
-          cssClass: 'danger',
+          cssClass: 'bg-danger',
           hex: '#000000'
         },
 
         {
-          cssClass: 'alt',
+          cssClass: 'bg-alt',
           hex: '#000000'
         },
         {
-          cssClass: 'light',
+          cssClass: 'bg-light',
           hex: '#000000'
         },
         {
-          cssClass: 'dark',
+          cssClass: 'bg-dark',
           hex: '#000000'
         },
 
