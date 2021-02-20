@@ -16,12 +16,22 @@
     </lx-side-nav-menu>
 
     <lx-side-nav-menu title="Demo">
+      <lx-side-nav-item to="/colors">Colors</lx-side-nav-item>
+      <lx-side-nav-item to="/tiles">Tiles</lx-side-nav-item>
+      <lx-side-nav-item to="/gauges">Gauges</lx-side-nav-item>
+      <lx-side-nav-item to="/cards">Cards</lx-side-nav-item>
+      <lx-side-nav-item to="/calendars">Calendars</lx-side-nav-item>
+      <lx-side-nav-item-drop-down title="Layout">
+        <lx-side-nav-item to="/grids">Grids</lx-side-nav-item>
+      </lx-side-nav-item-drop-down>
       <lx-side-nav-item-drop-down title="Buttons">
         <lx-side-nav-item to="/standard-buttons">Standard</lx-side-nav-item>
         <lx-side-nav-item to="/pill-buttons">Pills</lx-side-nav-item>
-
       </lx-side-nav-item-drop-down>
-      <lx-side-nav-item>Link 03</lx-side-nav-item>
+      <lx-side-nav-item-drop-down title="Navigations">
+        <lx-side-nav-item to="/navbar">Nav Bar</lx-side-nav-item>
+        <lx-side-nav-item to="/sidenav">Side Bar</lx-side-nav-item>
+      </lx-side-nav-item-drop-down>
     </lx-side-nav-menu>
   </lx-side-nav>
 </template>

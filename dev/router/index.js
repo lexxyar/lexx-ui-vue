@@ -1,21 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import buttonRoutes from "./router-buttons";
+import buttonRoutes from "./router-buttons"
+import navRoutes from "./router-navs"
 
 Vue.use(VueRouter)
 
 let routes = [
     {
         path: '/',
-        // path: '/sidenav',
-        name: 'SideNav',
-        component: () => import('../views/SideNav.vue')
-    },
-    {
-        path: '/navbar',
-        name: 'NavBar',
-        component: () => import('../views/NavBar.vue')
+        name: 'Home',
+        component: () => import('../views/Home.vue')
     },
     {
         path: '/colors',
@@ -38,7 +33,6 @@ let routes = [
         component: () => import('../views/Buttons.vue'),
         children: []
     },
-
     {
         path: '/inputs',
         name: 'Inputs',
@@ -64,11 +58,6 @@ let routes = [
         name: 'Grids',
         component: () => import('../views/Grids.vue')
     },
-    // {
-    //     path: '/toolbars',
-    //     name: 'Tools',
-    //     component: () => import('../views/Toolbars.vue')
-    // },
     {
         path: '/calendars',
         name: 'Calendar',
@@ -77,6 +66,7 @@ let routes = [
 ]
 
 routes = routes.concat(buttonRoutes)
+routes = routes.concat(navRoutes)
 
 const router = new VueRouter({
     mode: 'history',

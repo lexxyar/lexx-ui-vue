@@ -142,7 +142,7 @@
 
     </code>
 </pre>
-    
+
   </div>
 </template>
 

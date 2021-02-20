@@ -33,7 +33,7 @@
 :root {
   @each $name, $color in $theme-colors {
     --color-#{$name}: #{$color};
-    --color-#{$name}-rgb: #{toRGB($color)};
+    //--color-#{$name}-rgb: #{toRGB($color)};
 
     @for $i from 1 through 9 {
       --color-#{$name}-rgba-#{$i * 100}: #{toRGBA($color, $i / 10)};

@@ -1,10 +1,5 @@
 <template>
   <div class="sidebar light" :class="getCss()">
-    <!--    <template v-if="hasBrandSlot">-->
-    <!--      <div class="brand">-->
-    <!--        <slot name="brand"/>-->
-    <!--      </div>-->
-    <!--    </template>-->
     <template v-if="toggleButton">
       <button class="sidebar-toggle"
               @click="onSidebarToggleClick">
@@ -18,32 +13,18 @@
       </button>
     </template>
 
-    <nav class="sidenav">
-      <!--      <ul>-->
-      <slot></slot>
-      <!--      </ul>-->
-    </nav>
+    <div class="sidebar-content">
+      <nav class="sidenav">
+        <slot></slot>
+      </nav>
+    </div>
   </div>
-  <!--  <div>-->
-  <!--    <div class="sidenav" :class="active?'expanded':''">-->
-  <!--      <ul>-->
-  <!--        <slot></slot>-->
-  <!--      </ul>-->
-  <!--      <div class="toggle" :class="active?'expanded':''" @click="toggleMenu">-->
-
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
 </template>
 
 <script>
 export default {
   name: "lxSideNav",
   props: {
-    // brand: {
-    //   type: String,
-    //   // default: '',
-    // }
     expanded: {
       type: Boolean,
       default: true,
@@ -71,7 +52,6 @@ export default {
     getCss() {
       const css = []
       css.push(this.expandedSync ? 'sidebar__opened' : '')
-      // console.log(this.expandedSync, css)
       return css.join(' ')
     },
   },
