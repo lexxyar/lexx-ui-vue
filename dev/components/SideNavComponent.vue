@@ -33,6 +33,9 @@
         <lx-side-nav-item to="/standard-buttons">Standard</lx-side-nav-item>
         <lx-side-nav-item to="/pill-buttons">Pills</lx-side-nav-item>
       </lx-side-nav-item-drop-down>
+      <lx-side-nav-item-drop-down title="Badges">
+        <lx-side-nav-item to="/badges">Badges</lx-side-nav-item>
+      </lx-side-nav-item-drop-down>
       <lx-side-nav-item-drop-down title="Navigations">
         <lx-side-nav-item to="/navbar">Nav Bar</lx-side-nav-item>
         <lx-side-nav-item to="/sidenav">Side Bar</lx-side-nav-item>

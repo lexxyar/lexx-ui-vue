@@ -1,0 +1,32 @@
+.badge{
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  padding: .2rem .5rem;
+  font-size: .7rem;
+  border-radius: 10rem;
+  margin-left: .1rem;
+
+  &.badge-dot{
+    position: absolute;
+    display: block;
+    @include badge-dot-size(.65rem);
+    padding: 0;
+    margin: 0;
+    border: 2px solid var(--color-light);
+    &.badge-sm{
+      @include badge-dot-size(.55rem);
+    }
+    &.badge-lg{
+      @include badge-dot-size(.80rem);
+    }
+  }
+
+  &.badge-dot-labeled{
+    position: absolute;
+    display: block;
+    @include badge-dot-size(.65rem);
+    width: auto;
+    height: auto;
+    padding: 0 .4rem;
+  }
+}

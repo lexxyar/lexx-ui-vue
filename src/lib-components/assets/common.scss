@@ -28,6 +28,7 @@
 @import 'radiobuttons';
 */
 @import 'calendars';
+@import 'badges';
 
 
 :root {
@@ -71,6 +72,10 @@ ul {
 @each $name, $color in $theme-colors {
   .bg-#{$name} {
     background-color: $color;
+    color: var(--color-light);
+    @if $name == "light" or $name == "warning" {
+      color: var(--color-dark);
+    }
   }
   .color-#{$name} {
     color: $color;

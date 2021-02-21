@@ -1,6 +1,7 @@
 @use "sass:map";
 
 .btn {
+  position: relative;
   font-size: .8rem;
   font-weight: 600;
   outline: none !important;

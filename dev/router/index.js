@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import buttonRoutes from "./router-buttons"
 import navRoutes from "./router-navs"
 import tableRoutes from "./router-tables";
+import badgesRoutes from "./router-badges";
 
 Vue.use(VueRouter)
 
@@ -68,6 +69,7 @@ let routes = [
 routes = routes.concat(buttonRoutes)
 routes = routes.concat(navRoutes)
 routes = routes.concat(tableRoutes)
+routes = routes.concat(badgesRoutes)
 
 const router = new VueRouter({
     mode: 'history',
