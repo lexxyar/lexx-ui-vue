@@ -20,6 +20,7 @@
       <lx-side-nav-item to="/tiles">Tiles</lx-side-nav-item>
       <lx-side-nav-item to="/gauges">Gauges</lx-side-nav-item>
       <lx-side-nav-item to="/cards">Cards</lx-side-nav-item>
+      <lx-side-nav-item to="/paginations">Pagination</lx-side-nav-item>
       <lx-side-nav-item to="/calendars">Calendars</lx-side-nav-item>
       <lx-side-nav-item-drop-down title="Layout">
         <lx-side-nav-item to="/grids">Grids</lx-side-nav-item>

@@ -19,3 +19,4 @@ export {default as lxSideNavMenu} from './lxSideNavMenu.vue';
 export {default as lxToolBar} from './lxToolBar.vue';
 export {default as lxRadio} from './lxRadio.vue';
 export {default as lxCalendar} from './lxCalendar.vue';
+export {default as Pagination} from './lxPagination.vue';

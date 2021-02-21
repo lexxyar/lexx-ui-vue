@@ -64,6 +64,11 @@ let routes = [
         name: 'Calendar',
         component: () => import('../views/Calendars.vue')
     },
+    {
+        path: '/paginations',
+        name: 'Paginations',
+        component: () => import('../views/Pagination.vue')
+    },
 ]
 
 routes = routes.concat(buttonRoutes)
