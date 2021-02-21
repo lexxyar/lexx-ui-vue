@@ -12,7 +12,8 @@
   line-height: 1.1rem;
   display: inline-block;
   border-color: darken(map.get($theme-colors, "light"), 15);
-  background-color: map.get($theme-colors, "light");
+  //background-color: map.get($theme-colors, "light");
+  background-color: var(--color-light);
 
   &:hover, &.active {
     &:not(:disabled):not(.disabled) {
@@ -40,7 +41,7 @@
       }
 
       &.btn-outline {
-        background-color: transparent;
+        background-color: var(--color-light);
         color: var(--color-#{$name});
         @if $name == 'light' {
           color: var(--color-dark);
@@ -135,6 +136,7 @@
 .bg-dark {
   .btn-link {
     color: var(--color-light);
+
     &:hover:not(:disabled):not(.disabled) {
       color: var(--color-light);
     }
