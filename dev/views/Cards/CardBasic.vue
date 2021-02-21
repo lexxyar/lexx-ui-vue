@@ -15,7 +15,7 @@
 <code>&lt;template&gt;</code>
 <code>  &lt;lx-card&gt;</code>
 <code>    &lt;template #header&gt;</code>
-<code>      {{ title }}</code>
+<code>      { { title }}</code>
 <code>    &lt;/template&gt;</code>
 <code>    &lt;p&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;</code>
 <code>    &lt;br/&gt;</code>

@@ -20,7 +20,7 @@
 <code></code>
 <code>          &lt;template v-for=&quot;type in types&quot;&gt;</code>
 <code>            &lt;button class=&quot;btn mb-1 mr-1&quot; :class=&quot;getTypeClass(type)&quot;&gt;</code>
-<code>              {{ type }}</code>
+<code>              { { type }}</code>
 <code>            &lt;/button&gt;</code>
 <code>          &lt;/template&gt;</code>
 <code></code>
@@ -34,7 +34,7 @@
 <code></code>
 <code>          &lt;template v-for=&quot;type in types&quot;&gt;</code>
 <code>            &lt;button class=&quot;btn mb-1 mr-1 active&quot; :class=&quot;getTypeClass(type)&quot;&gt;</code>
-<code>              {{ type }}</code>
+<code>              { { type }}</code>
 <code>            &lt;/button&gt;</code>
 <code>          &lt;/template&gt;</code>
 <code></code>
@@ -50,7 +50,7 @@
 <code></code>
 <code>          &lt;template v-for=&quot;type in types&quot;&gt;</code>
 <code>            &lt;button class=&quot;btn mb-1 mr-1 disabled&quot; :class=&quot;getTypeClass(type)&quot;&gt;</code>
-<code>              {{ type }}</code>
+<code>              { { type }}</code>
 <code>            &lt;/button&gt;</code>
 <code>          &lt;/template&gt;</code>
 <code></code>
