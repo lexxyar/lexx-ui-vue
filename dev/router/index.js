@@ -29,12 +29,6 @@ let routes = [
         component: () => import('../views/Tables.vue')
     },
     {
-        path: '/buttons',
-        name: 'Buttons',
-        component: () => import('../views/Buttons.vue'),
-        children: []
-    },
-    {
         path: '/inputs',
         name: 'Inputs',
         component: () => import('../views/Inputs.vue')

@@ -1,7 +1,6 @@
 <template>
   <div>
     <lx-table :fields="fields" :items="items" :class="getModeCss()">
-
     </lx-table>
   </div>
 </template>
@@ -12,30 +11,18 @@ import LxTable from "@/lib-components/lxTable";
 export default {
   name: "RegularTableLayout",
   components: {LxTable},
-  props:{
-    mode:{
+  props: {
+    mode: {
       type: String
     }
   },
   data() {
     return ({
       fields: [
-        {
-          key: 'id',
-          label: '#',
-        },
-        {
-          key: 'name1',
-          label: 'First name',
-        },
-        {
-          key: 'name2',
-          label: 'Last name',
-        },
-        {
-          key: 'login',
-          label: 'Username',
-        },
+        {key: 'id', label: '#',},
+        {key: 'name1', label: 'First name',},
+        {key: 'name2', label: 'Last name',},
+        {key: 'login', label: 'Username',},
       ],
       items: [
         {id: 1, name1: 'Mark', name2: 'Otto', login: '@mdo'},
@@ -44,9 +31,9 @@ export default {
       ]
     })
   },
-  methods:{
-    getModeCss(){
-      return this.mode?`table-${this.mode}`:''
+  methods: {
+    getModeCss() {
+      return this.mode ? `table-${this.mode}` : ''
     }
   }
 }
