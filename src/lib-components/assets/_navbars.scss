@@ -1,7 +1,7 @@
 $toggle-button-size: 1.5rem;
 
 .navbar {
-  padding: $lx-config-nav-padding-y 0;
+  //padding: $lx-config-nav-padding-y 0;
   font-weight: 500;
   font-size: $lx-config-nav-font-size;
   position: fixed;
@@ -9,13 +9,12 @@ $toggle-button-size: 1.5rem;
   height: $lx-config-nav-size;
   max-height: $lx-config-nav-size;
   min-height: $lx-config-nav-size;
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  box-shadow: 0 1px 2px var(--color-dark);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  box-shadow: 0 1px 6px var(--color-dark);
   left: 0;
   right: 0;
   top: 0;
-
 
   &.with-sidebar-left {
     margin-left: $lx-config-sidenav-width;
@@ -26,21 +25,24 @@ $toggle-button-size: 1.5rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: 100%;
   }
 
   .brand {
-    //cursor: pointer;
+    cursor: pointer;
     white-space: nowrap;
     text-transform: uppercase;
     font-size: 1.2rem;
     min-width: var(--sidenav-size);
     padding-right: $lx-config-main-margin;
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     .toggle-button {
       position: absolute;
-      right: $lx-config-main-margin;
-      top: 0;
+      right: $lx-config-main-margin + .5;
     }
   }
 
@@ -64,7 +66,7 @@ $toggle-button-size: 1.5rem;
       height: 2px;
       font-size: 0;
       border: none;
-      background-color: var(--color-light);
+      background-color: var(--color-dark);
       cursor: pointer;
       margin-top: .7rem;
       transition: all .3s ease 0s;
@@ -94,7 +96,7 @@ $toggle-button-size: 1.5rem;
         background-color: transparent;
 
         &:before, &:after {
-          background-color: var(--color-light);
+          background-color: var(--color-dark);
           transform-origin: center center;
           margin: 0;
         }
@@ -120,6 +122,7 @@ $toggle-button-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
 
     .nav, .nav-right {
       list-style: none;
@@ -130,6 +133,15 @@ $toggle-button-size: 1.5rem;
       li {
         padding: 0 .6rem;
         white-space: nowrap;
+        height: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        &:hover{
+          color: var(--color-info);
+          transition: all .3s ease 0s;
+        }
 
         &.dropdown-item {
           position: relative;
@@ -147,25 +159,21 @@ $toggle-button-size: 1.5rem;
             width: auto;
             display: none;
             position: absolute;
-            background-color: var(--color-dark);
+            background-color: var(--color-light);
             list-style: none;
             left: 0;
             top: 100%;
-            margin: 1.1rem 0 0;
+            margin: 0;
             box-sizing: border-box;
-            //border: 1px solid $lx-color-dark-lite;
-            border: 1px solid var(--color-dark-rgba-400);
+            @include border-shadow;
             padding: 0;
             z-index: 1001;
 
             li {
               padding: 0;
-              //border-bottom: 1px solid $lx-color-dark-lite;
-              border-bottom: 1px solid var(--color-dark-rgba-400);
 
               &:hover {
-                //background-color: rgba($lx-color-dark-lite, .2);
-                background-color: var(--color-dark-rgba-400);
+                background-color: var(--color-primary-rgba-100);
               }
 
               a {
@@ -173,14 +181,16 @@ $toggle-button-size: 1.5rem;
                 padding: .4rem .6rem;
 
                 &:hover {
-                  //color: $lx-color-inactive-light;
-                  color: var(--color-light);
+                  color: inherit;
                 }
               }
             }
           }
 
           &.expanded {
+            //&:focus-within{
+            //  background-color: red;
+            //}
             .dropdown-menu {
               display: block;
             }
@@ -188,34 +198,21 @@ $toggle-button-size: 1.5rem;
         }
 
         a {
-          transition: all .3s ease 0s;
+
           text-decoration: none;
-          //color: $lx-color-inactive-light;
-          color: var(--color-light);
-          //font-size: 1.1rem;
-          font-size: $lx-config-nav-font-size;
+          color: var(--color-dark);
 
           & > * {
-            //color: $lx-color-inactive-light;
             color: var(--color-light);
           }
 
-          .btn {
-            &:hover {
-              //background-color: rgba($lx-color-inactive, .3);
-              background-color: var(--color-light);
-            }
-
-            &:active {
-              //background-color: rgba($lx-color-inactive, .8);
-              background-color: var(--color-light);
-            }
+          &:hover{
+            color: inherit;
+            transform: inherit;
+            //color: var(--color-info);
+            //transition: all .3s ease 0s;
           }
 
-          &:hover {
-            //color: $lx-color-info;
-            color: var(--color-info);
-          }
         }
       }
     }
@@ -236,7 +233,6 @@ $toggle-button-size: 1.5rem;
 
   .toggle {
     display: none;
-    //color: $lx-color-inactive-light;
     color: var(--color-light);
     position: relative;
     cursor: pointer;
