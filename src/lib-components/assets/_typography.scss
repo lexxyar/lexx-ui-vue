@@ -78,6 +78,46 @@ $axis: 'x', 'y';
   align-items: center;
 }
 
+.flex-start {
+  justify-content: flex-start;
+}
+
 .flex-end {
   justify-content: flex-end;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-evenly {
+  justify-content: space-evenly;
+}
+
+.flwx-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-items-start {
+  align-items: flex-start;
+}
+
+.flex-items-end {
+  align-items: flex-end;
+}
+
+.flex-items-center {
+  align-items: center;
+}
+
+.flex-items-stretch {
+  align-items: stretch;
+}
+
+.flex-items-baseline {
+  align-items: baseline;
 }

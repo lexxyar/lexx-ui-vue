@@ -2,7 +2,7 @@
   <div class="button-group">
 
     <button class="btn btn-outline btn-primary" :class="canPrev()?'':'disabled'"
-            @click="onChangePage(-1)">Prev
+            @click="onChangePage(-1)">{{ prevButtonText }}
     </button>
     <template v-for="i in pageCount">
       <button class="btn btn-outline btn-primary" :class="i === currentPageSync?'active':''"
@@ -10,7 +10,7 @@
       </button>
     </template>
     <button class="btn btn-outline btn-primary" :class="canNext()?'':'disabled'"
-            @click="onChangePage(1)">Next
+            @click="onChangePage(1)">{{ nextButtonText }}
     </button>
   </div>
 </template>
@@ -21,7 +21,9 @@ export default {
   props: {
     total: {type: Number, default: 1},
     itemsPerPage: {type: Number, default: 10},
-    currentPage: {type: Number, default: 1}
+    currentPage: {type: Number, default: 1},
+    prevButtonText: {type: String, default: 'Previous'},
+    nextButtonText: {type: String, default: 'Next'},
   },
   data() {
     return ({
