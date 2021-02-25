@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-8">
           <h4 class="mb-1 mt-1"><a href="#">Simple input</a></h4>
-          <lx-input class="mb-1" placeholder="Search text..."></lx-input>
+            <lx-input class="mb-1" placeholder="Search text..."></lx-input>
 
           <h4 class="mb-1 mt-2"><a href="#">Labeled input</a></h4>
           <lx-input class="mb-1" label="Search input" placeholder="Search text..."></lx-input>

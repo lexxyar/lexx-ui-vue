@@ -33,6 +33,10 @@
         <lx-side-nav-item to="/standard-buttons">Standard</lx-side-nav-item>
         <lx-side-nav-item to="/pill-buttons">Pills</lx-side-nav-item>
       </lx-side-nav-item-drop-down>
+      <lx-side-nav-item-drop-down title="Form">
+        <lx-side-nav-item to="/basic-inputs">Basic inputs</lx-side-nav-item>
+        <lx-side-nav-item to="/group-inputs">Input groups</lx-side-nav-item>
+      </lx-side-nav-item-drop-down>
       <lx-side-nav-item-drop-down title="Badges">
         <lx-side-nav-item to="/badges">Badges</lx-side-nav-item>
       </lx-side-nav-item-drop-down>

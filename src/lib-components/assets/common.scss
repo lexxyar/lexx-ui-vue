@@ -9,24 +9,19 @@
 @import 'grids';
 @import 'buttons';
 @import 'inputs';
-/*
 @import 'modalWindow';
-*/
 @import 'tables';
 @import 'tiles';
 @import 'navbars';
 @import 'gauge';
-/*
-@import 'switches';
+
+//@import 'switches';
 @import 'checkboxes';
 @import 'searchHelps';
-*/
 @import 'cards';
 @import 'sidenavs';
-/*
-@import 'toolbars';
+//@import 'toolbars';
 @import 'radiobuttons';
-*/
 @import 'calendars';
 @import 'badges';
 
@@ -81,4 +76,3 @@ ul {
     color: $color;
   }
 }
-

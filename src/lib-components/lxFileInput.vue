@@ -4,31 +4,24 @@
       <label :for="uid" :class="labelClass">{{ label }}</label>
     </template>
     <div class="input-container">
-      <div class="input-extention prepend" v-if="hasPrepend">
-        <slot name="prepend"></slot>
-      </div>
-      <input :type="type" :value="value" :id="uid" :class="hasAppend?'appended':''"
+      <input type="file" :value="value" :id="uid"
              class="form-control"
              @input="$emit('input', $event.target.value)"
              :readonly="readonly"
              :placeholder="placeholder"
       />
-      <div class="input-extention append" v-if="hasAppend">
-        <slot name="append"></slot>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import {uuid} from 'vue-uuid'
+import {uuid} from "vue-uuid";
 import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default {
-  name: "lxInput",
+  name: "lxFileInput",
   props: {
     // value: {},
-    type: {type: String, default: 'text'},
     // label: {type: String, default: ''},
     // emptyLabel: {type: Boolean, default: false},
     // readonly: {type: Boolean, default: false},
@@ -47,26 +40,20 @@ export default {
     })
   },
   computed: {
-    //   hasAppend() {
-    //     return this.$slots['append']
-    //   },
-    //   hasPrepend() {
-    //     return this.$slots['prepend']
-    //   },
-    //   labelClass() {
-    //     let val = [];
-    //     val.push(this.labelSize)
+    // labelClass() {
+    //   let val = [];
+    //   val.push(this.labelSize)
     //
-    //     if (this.label) {
-    //       val.push('has-text')
-    //     }
-    //     return val.join(' ')
+    //   if (this.label) {
+    //     val.push('has-text')
     //   }
+    //   return val.join(' ')
+    // }
   },
-  mixins: [inputMixin]
+  mixins: [inputMixin],
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>

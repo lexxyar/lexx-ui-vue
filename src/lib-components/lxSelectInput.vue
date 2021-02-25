@@ -7,12 +7,18 @@
       <div class="input-extention prepend" v-if="hasPrepend">
         <slot name="prepend"></slot>
       </div>
-      <input :type="type" :value="value" :id="uid" :class="hasAppend?'appended':''"
-             class="form-control"
-             @input="$emit('input', $event.target.value)"
-             :readonly="readonly"
-             :placeholder="placeholder"
-      />
+      <select :id="uid" :class="hasAppend?'appended':''"
+              class="form-control"
+              :multiple="multiple"
+              :disabled="readonly"
+              :placeholder="placeholder"
+
+      >
+<!--        v-model="value"-->
+        <template v-for="opt in options">
+          <option value="opt.value">{{ opt.title }}</option>
+        </template>
+      </select>
       <div class="input-extention append" v-if="hasAppend">
         <slot name="append"></slot>
       </div>
@@ -21,17 +27,18 @@
 </template>
 
 <script>
-import {uuid} from 'vue-uuid'
+import {uuid} from "vue-uuid";
 import inputMixin from "@/lib-components/mixins/inputMixin";
 
 export default {
-  name: "lxInput",
+  name: "lxSelectInput",
   props: {
+    options: {type: Array, default: []},
     // value: {},
-    type: {type: String, default: 'text'},
     // label: {type: String, default: ''},
     // emptyLabel: {type: Boolean, default: false},
     // readonly: {type: Boolean, default: false},
+    multiple: {type: Boolean, default: false},
     // placeholder: {type: String, default: ''},
     // labelSize: {
     //   type: String,
@@ -47,26 +54,26 @@ export default {
     })
   },
   computed: {
-    //   hasAppend() {
-    //     return this.$slots['append']
-    //   },
-    //   hasPrepend() {
-    //     return this.$slots['prepend']
-    //   },
-    //   labelClass() {
-    //     let val = [];
-    //     val.push(this.labelSize)
+    // hasAppend() {
+    //   return this.$slots['append']
+    // },
+    // hasPrepend() {
+    //   return this.$slots['prepend']
+    // },
+    // labelClass() {
+    //   let val = [];
+    //   val.push(this.labelSize)
     //
-    //     if (this.label) {
-    //       val.push('has-text')
-    //     }
-    //     return val.join(' ')
+    //   if (this.label) {
+    //     val.push('has-text')
     //   }
+    //   return val.join(' ')
+    // }
   },
-  mixins: [inputMixin]
+  mixins:[inputMixin]
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>

@@ -1,6 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 export {default as lxCheckbox} from './lxCheckbox.vue';
 export {default as lxInput} from './lxInput.vue';
+export {default as lxSelectInput} from './lxSelectInput.vue';
+export {default as lxTextareaInput} from './lxTextareaInput.vue';
+export {default as lxFileInput} from './lxFileInput.vue';
 export {default as lxModal} from './lxModal.vue';
 export {default as lxNavbar} from './lxNavbar.vue';
 export {default as lxNavbarItem} from './lxNavbarItem.vue';
